@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Sep 15, 2021 at 05:10 AM
+-- Generation Time: Sep 16, 2021 at 06:40 AM
 -- Server version: 8.0.21
 -- PHP Version: 7.3.21
 
@@ -54,7 +54,7 @@ CREATE TABLE IF NOT EXISTS `admin` (
   `password` varchar(40) NOT NULL,
   `company_id` int NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `admin`
@@ -65,7 +65,10 @@ INSERT INTO `admin` (`id`, `email`, `password`, `company_id`) VALUES
 (2, 'vimu@gmail.com', '912ec803b2ce49e4a541068d495ab570', 0),
 (3, 'dog@gmail.com', '06d80eb0c50b49a509b49f2424e8c805', 0),
 (4, 'vimukthinia@gmail.com', '912ec803b2ce49e4a541068d495ab570', 0),
-(5, 'radui@gmail.com', 'fd2cc6c54239c40495a0d3a93b6380eb', 0);
+(5, 'radui@gmail.com', 'fd2cc6c54239c40495a0d3a93b6380eb', 0),
+(6, 'vimukthinia@gmail.com', 'bd93b91d4a5e9a7a5fcd1fad5b9cb999', 0),
+(7, 'vimukthinia@gmail.com', '93f903b0425b684cf8bdbee4951883ed', 0),
+(8, 'vimukthinia@gmail.com', '7815696ecbf1c96e6894b779456d330e', 0);
 
 -- --------------------------------------------------------
 
@@ -102,9 +105,17 @@ INSERT INTO `client` (`id`, `email`, `password`) VALUES
 
 DROP TABLE IF EXISTS `compani_id`;
 CREATE TABLE IF NOT EXISTS `compani_id` (
-  `compani_id` int NOT NULL
+  `id_no` varchar(10) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
+--
+-- Dumping data for table `compani_id`
+--
+
+INSERT INTO `compani_id` (`id_no`) VALUES
+('cv23432165'),
+('987653fg45'),
+('0987uy4563');
 
 -- --------------------------------------------------------
 
