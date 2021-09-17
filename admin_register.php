@@ -16,18 +16,11 @@ require_once('connection.php');
     <div class="container">
         <div>
             <?php
-            $query = "SELECT * FROM compani_id";
-            $select = mysqli_query($connection, $query);
-            while ($recodes = mysqli_fetch_assoc($select)) {
-                echo $recodes['id_no'] . "<br>";
-            }
-
-            ?>
-            <!--page header-->
-            <h3>Registration Page</h3>
-            <?php
             //variable for store errer messages 
             $error = "";
+            //variable for store admin id
+            $admin_id = "";
+
             if (isset($_REQUEST['submit'])) {
                 //storing userinputs into veriables
                 $email = $_REQUEST['email'];
@@ -35,9 +28,21 @@ require_once('connection.php');
                 $password = $_REQUEST['password'];
                 $password_confirm = $_REQUEST['password_confirm'];
 
+                //compani id compare
+                $query = "SELECT * FROM compani_id";
+                $select = mysqli_query($connection, $query);
+                while ($recodes = mysqli_fetch_assoc($select)) {
+                    if ($compani_id == $recodes['id_no']) {
+                        $admin_id = $compani_id;
+                        break;
+                    }
+                }
+
                 //checking user input fields are empty or not
                 if (empty(trim($email))) {
                     $error = "Please fill email";
+                } else if (empty(trim($compani_id))) {
+                    $error = "Please fill compani id";
                 } else if (empty(trim($password))) {
                     $error = "Please fill password";
                 } else if (empty(trim($password_confirm))) {
@@ -47,10 +52,14 @@ require_once('connection.php');
                 else if ($password !== $password_confirm) {
                     $error = "Password did not matching";
                 }
+                //checking two admin id empty or not
+                else if (empty($admin_id)) {
+                    $error = "Enter correct id no";
+                }
                 //sending user inputs database
                 else {
                     $password = md5($password);
-                    $client = "INSERT INTO admin (email,password) VALUES ('$email','$password')";
+                    $client = "INSERT INTO admin (email,password,company_id) VALUES ('$email','$password','$admin_id')";
                     mysqli_query($connection, $client);
                     //header("Location: ./connection.php?sighup=success");
                 }
@@ -58,33 +67,23 @@ require_once('connection.php');
             ?>
             <!--admin registation form-->
             <form method="post" action="<?php echo $_SERVER["PHP_SELF"]; ?>">
-                <table>
-                    <tr>
-                        <!--errer masseges write in webpage-->
-                        <td colspan="2" align="center">
-                            <p style="color: red;"><?php echo $error; ?></p>
-                        </td>
-                    </tr>
+                <div class="row">
+                    <!--errer masseges write in webpage-->
+                    <p colspan="2" align="center">
+                        <p style="color: red;"><?php echo $error; ?></p>
+                    </p>
                     <!--gettng input from user-->
-                    <tr>
-                        <td id='label'><label for="email">Email: </label></td>
-                        <td><input type="email" name="email" placeholder="" required></td>
-                    </tr>
-                    <tr>
-                        <td id='label'><label for="compani_id">Company ID: </label></td>
-                        <td><input type="number" name="compani_id" placeholder="" required></td>
-                    </tr>
-                    <tr>
-                        <td id='label'><label for="password">Password: </label></td>
-                        <td><input type="password" name="password" placeholder=""></td>
-                    </tr>
-                    <tr>
-                        <td id='label'><label for="password_confirm">Confirm Password: </label></td>
-                        <td><input type="password" name="password_confirm" placeholder=""></td>
-                    </tr>
-                    <td><button type="submit" name="submit">Register</button></td>
-                    <td><button type="reset">Clear</button></td>
-                </table>
+                    <p id='label'><label for="email">Email: </label></p>
+                    <p><input type="email" name="email" placeholder="" required></p>
+                    <p id='label'><label for="compani_id">Company ID: </label></p>
+                    <p><input type="text" name="compani_id" placeholder="" required></p>
+                    <p id='label'><label for="password">Password: </label></p>
+                    <p><input type="password" name="password" placeholder=""><p>
+                    <p id='label'><label for="password_confirm">Confirm Password: </label></p>
+                    <p><input type="password" name="password_confirm" placeholder=""></p>
+                    <div class="col"><button type="submit" name="submit">Register</button></div>
+                    <div class="col"><button type="reset">Clear</button></div>
+                </div>
             </form>
         </div>
     </div>
