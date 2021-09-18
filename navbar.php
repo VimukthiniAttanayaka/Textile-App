@@ -44,6 +44,4 @@ require_once('connection.php');
 </body>
 
 </html>
-<!--end connection with database-->
-<?php mysqli_close($connection); ?>
 
