@@ -10,12 +10,10 @@ require_once('connection.php');
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <title>Home</title>
-    <style>
-        
-    </style>
 </head>
 
 <body>
+    <div class="container-fluid">
     <!--include navbar for home page-->
     <?php include 'navbar.php';?>
 
@@ -24,6 +22,7 @@ require_once('connection.php');
     <?php include 'before_footer.php';?>
     <!--include footer for home page-->
     <?php include 'footer.php';?>
+</div>
 </body>
 
 </html>

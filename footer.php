@@ -11,10 +11,18 @@ require_once('connection.php');
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <title>Footer</title>
     <style>
-        body{
+        #footer{
             background-color: black;
-            padding-top: 3%;
+            padding: 3%;
+            padding-top: 10px;
             color: white;
+        }
+        #url{
+            color: white;
+            text-decoration: none;
+        }
+        .col-5-lg{
+            padding-bottom: 10px;
         }
     </style>
 </head>
@@ -47,7 +55,7 @@ require_once('connection.php');
         }
     }
     ?>
-    <div class="container-fluid">
+    <div class="container-fluid" id="footer">
         <div class="row">
             <div class="col-5">
                 <h2>Customer Feedback</h2>
@@ -65,35 +73,34 @@ require_once('connection.php');
                     <p><input type="number" name="phone_no" placeholder="" required></p>
                     <p id='label'><label for="feedback">Feedback: </label></p>
                     <p><input type="text" name="feedback" placeholder="" required></p>
-                    <button type="submit" name="submit">Submit</button>
+                    <button class="btn btn-primary" type="submit" name="submit">Submit</button>
                 </form>
             </div>
             <div class="col-7">
                 <div class="row">
                     <div class="col">
-                        <h2>Categories</h2>
-                        <div><a id='url' href="compani.php">Men's</a></div>
-                        <div><a id='url' href="SignUp-page.php">Women's</a></div>
-                        <div><a id='url' href="SignUp-page.php">Kids</a></div>
-                        <div><a id='url' href="SignUp-page.php">Cloths</a></div>
-                        <div><a id='url' href="SignUp-page.php">Shoes</a></div>
-                        <div><a id='url' href="SignUp-page.php">Bags</a></div>
-                        <div><a id='url' href="SignUp-page.php">Toys</a></div>
+                        <h2>Categories</h2><br>
+                        <div><a id='url' href="compani.php">Men's Section</a></div><br>
+                        <div><a id='url' href="SignUp-page.php">Women's Section</a></div><br>
+                        <div><a id='url' href="SignUp-page.php">Kids Section</a></div><br>
+                        <div><a id='url' href="SignUp-page.php">Cloths Section</a></div><br>
+                        <div><a id='url' href="SignUp-page.php">Shoes Section</a></div><br>
+                        <div><a id='url' href="SignUp-page.php">Bags Section</a></div><br>
+                        <div><a id='url' href="SignUp-page.php">Toys Section</a></div><br><br>
                     </div>
                     <div class="col">
-                        <h2>Information</h2>
-                        <div><a id='url' href="SignUp-page.php">About Us</a></div>
-                        <div><a id='url' href="SignUp-page.php">Privacy & Policy</a></div>
-                        <div><a id='url' href="SignUp-page.php">Delivery Information</a></div>
-                        <div><a id='url' href="SignUp-page.php">Contact</a></div>
-                        <div><a id='url' href="SignUp-page.php">Terms & Conditions</a></div>
-                        <div><a id='url' href="SignUp-page.php">Return & Exchangers</a></div>
+                        <h2>Information</h2><br>
+                        <div><a id='url' href="SignUp-page.php">About Us</a></div><br>
+                        <div><a id='url' href="SignUp-page.php">Privacy & Policy</a></div><br>
+                        <div><a id='url' href="SignUp-page.php">Delivery Information</a></div><br>
+                        <div><a id='url' href="SignUp-page.php">Contact</a></div><br>
+                        <div><a id='url' href="SignUp-page.php">Terms & Conditions</a></div><br>
+                        <div><a id='url' href="SignUp-page.php">Return & Exchangers</a></div><br><br>
                     </div>
                 </div>
                 <div class="row">
-                    <h3>Accepted payment methods</h3>
+                    <br><br><br><h3>Accepted payment methods</h3>
                     <img src="./images/payment-method.png" alt="payment methods" style="width:280px;height:50px;">
-
                 </div>
             </div>
         </div>
