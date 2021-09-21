@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Sep 18, 2021 at 12:38 PM
+-- Generation Time: Sep 20, 2021 at 08:33 AM
 -- Server version: 8.0.21
 -- PHP Version: 7.3.21
 
@@ -39,6 +39,29 @@ CREATE TABLE IF NOT EXISTS `admin` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `bags`
+--
+
+DROP TABLE IF EXISTS `bags`;
+CREATE TABLE IF NOT EXISTS `bags` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `name` varchar(100) NOT NULL,
+  `price` double NOT NULL,
+  `discription` varchar(255) NOT NULL,
+  `total_item` int NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `bags`
+--
+
+INSERT INTO `bags` (`id`, `name`, `price`, `discription`, `total_item`) VALUES
+(1, 'qwerwerf', 54.45, 'erwe gtg rtuyhryh rtyr', 5);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `client`
 --
 
@@ -66,7 +89,14 @@ CREATE TABLE IF NOT EXISTS `cloths` (
   `discription` varchar(255) NOT NULL,
   `total_item` int NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `cloths`
+--
+
+INSERT INTO `cloths` (`id`, `name`, `price`, `size`, `men_women_kid`, `discription`, `total_item`) VALUES
+(1, 'qwerwerf', 54.45, 23, 1, 'erwe gtg rtuyhryh rtyr', 5);
 
 -- --------------------------------------------------------
 
@@ -109,6 +139,54 @@ CREATE TABLE IF NOT EXISTS `feedback_form` (
 
 INSERT INTO `feedback_form` (`name`, `phone_no`, `email`, `feedback`) VALUES
 ('Jane', 2147483647, 'vimukthinia@gmail.com', 'wefhbrewf wefvrwefdnew qedqowfd evr2374f 2grwef');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `shoes`
+--
+
+DROP TABLE IF EXISTS `shoes`;
+CREATE TABLE IF NOT EXISTS `shoes` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `name` varchar(100) NOT NULL,
+  `price` double NOT NULL,
+  `size` int NOT NULL,
+  `men_women_kid` tinyint(1) NOT NULL,
+  `discription` varchar(255) NOT NULL,
+  `total_item` int NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `shoes`
+--
+
+INSERT INTO `shoes` (`id`, `name`, `price`, `size`, `men_women_kid`, `discription`, `total_item`) VALUES
+(1, 'qwerwerf', 54.45, 23, 1, 'erwe gtg rtuyhryh rtyr', 5);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `toys`
+--
+
+DROP TABLE IF EXISTS `toys`;
+CREATE TABLE IF NOT EXISTS `toys` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `name` varchar(100) NOT NULL,
+  `price` double NOT NULL,
+  `discription` varchar(255) NOT NULL,
+  `total_item` int NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `toys`
+--
+
+INSERT INTO `toys` (`id`, `name`, `price`, `discription`, `total_item`) VALUES
+(1, 'qwerwerf', 54.45, 'erwe gtg rtuyhryh rtyr', 5);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

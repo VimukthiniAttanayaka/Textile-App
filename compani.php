@@ -12,6 +12,18 @@
             integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" 
             crossorigin="anonymous">
         <title>compani id</title>
+        <style>
+            .hello-lg{
+                color: red;
+            }
+            .dog-sm{
+                color: green;
+            }
+            .bye-md{
+                color: blue;
+            }
+        </style>
+
     </head>
     <body>
         <div id="form">
@@ -22,6 +34,7 @@
                     mysqli_query($connection,$client);  
                 }
             ?>
+            <p class="hello-lg bye-md dog-sm">hello everyone</p>
             <form method="post" action="<?php echo $_SERVER["PHP_SELF"];?>">
                 <table>
                     <tr>

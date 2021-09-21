@@ -10,10 +10,33 @@ require_once('connection.php');
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <title>Registration-form</title>
+    <style>
+        .container-fluid{
+            padding: 0px !important;
+            margin: 0px !important;
+        }
+        body{
+            background-image: url("./images/login-background.jpg");
+            background-repeat: no-repeat;
+            background-size: 100%;
+        }
+        .row-lg{
+            width: 250px;
+            align-self: center;
+            margin-top: 2%;
+            margin-left: 70%;
+            padding-bottom: 5%;
+            padding-left: 1%;
+            background-color: white;
+            opacity: 0.755;
+        }
+    </style>
 </head>
 
 <body>
-    <div id="form1">
+<div class="container-fluid">
+    <!--include navbar for home page-->
+    <?php include 'navbar.php';?>
         <?php
         //variable for store errer messages 
         $error = "";
@@ -44,7 +67,7 @@ require_once('connection.php');
         }
         ?>
         <form method="post" action="<?php echo $_SERVER["PHP_SELF"]; ?>">
-            <div id="registerform">
+            <div class="row-lg justify-content-center">
                 <div class="row">
                     <!--errer masseges write in webpage-->
                     <p colspan="2" align="center">
@@ -57,8 +80,9 @@ require_once('connection.php');
                     <p><input type="password" name="password" placeholder="">
                     <p id='label'><label for="password_confirm">Confirm Password: </label></p>
                     <p><input type="password" name="password_confirm" placeholder="">
-                    <div class="col"><button type="submit" name="submit">Register</button></div>
-                    <div class="col"><button type="reset">Clear</button></div>
+                    <p>Allready have a account? <a href="client_login.php">Log-In</a></p>
+                    <div class="col"><button class="btn btn-secondary"type="reset">Clear</button></div>
+                    <div class="col"><button class="btn btn-primary" type="submit" name="submit">Register</button></div>
                 </div>
             </div>
         </form>
