@@ -49,7 +49,6 @@ require_once('../connection.php');
                 //storing userinputs into veriables
                 $name = $_REQUEST['name'];
                 $price = $_REQUEST['price'];
-                $discription = $_REQUEST['discription'];
                 $total_item = $_REQUEST['total_item'];
 
                 //checking user input fields are empty or not
@@ -57,15 +56,13 @@ require_once('../connection.php');
                     $error = "Please fill name";
                 } else if (empty(trim($price))) {
                     $error = "Please fill price";
-                } else if (empty(trim($discription))) {
-                    $error = "Please fill discription";
                 } else if (empty(trim($total_item))) {
                     $error = "Please fill total_item";
                 }
                 //sending user inputs database
                 else {
-                    $client = "INSERT INTO toys (name,price,discription,total_item) 
-                    VALUES ('$name','$price','$discription','$total_item')";
+                    $client = "INSERT INTO toys (name,price,total_item) 
+                    VALUES ('$name','$price','$total_item')";
                     mysqli_query($connection, $client);
                     //header("Location: ./connection.php?sighup=success");
                 }
@@ -83,8 +80,6 @@ require_once('../connection.php');
                     <p><input type="text" name="name" placeholder="" required></p>
                     <p id='label'><label for="price">Price: </label></p>
                     <p><input type= number step=0.01 name="price" placeholder="" required></p>
-                    <p id='label'><label for="discription">Discription: </label></p>
-                    <p><input type="text" name="discription" placeholder=""></p>
                     <p id='label'><label for="total_item">Total Item: </label></p>
                     <p><input type="number" name="total_item" placeholder=""></p>
                     <div class="row">

@@ -9,6 +9,7 @@
     <style>
         #before-footer{
             background-color: blue;
+            color: white;
         }
     </style>
 </head>

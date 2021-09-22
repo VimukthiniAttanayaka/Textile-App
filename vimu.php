@@ -26,7 +26,7 @@ require_once('connection.php');
         <?php include 'navbar.php'; ?>
 
         <?php
-        $id = 7;
+        $id = 4;
         $catagery = 'shoes';
 
         $query = "SELECT * FROM `shoes` WHERE id=$id";
@@ -34,50 +34,65 @@ require_once('connection.php');
         $recodes = mysqli_fetch_assoc($select); ?>
 
         <script>
-            var id = "<?php echo $recodes['id'];?>";
-            var name = "<?php echo $recodes['name'];?>";
-            var price = "<?php echo $recodes['price'];?>";
-            var men_women_kid = "<?php echo $recodes['men_women_kid'];?>";
-            var discription = "<?php echo $recodes['discription'];?>";
-
-            if (men_women_kid == 1) {
-                var shoe1 = "./images/shoes/men/<?php echo $recodes['id'];?>.0.jpg";
-                var shoe2 = "./images/shoes/men/<?php echo $recodes['id'];?>.1.jpg";
-                var shoe3 = "./images/shoes/men/<?php echo $recodes['id'];?>.2.jpg";
-            } else if (men_women_kid == 2) {
-                var shoe1 = "./images/shoes/women/<?php echo $recodes['id'];?>.0.jpg";
-                var shoe2 = "./images/shoes/women/<?php echo $recodes['id'];?>.1.jpg";
-                var shoe3 = "./images/shoes/women/<?php echo $recodes['id'];?>.2.jpg";
-            } else if (men_women_kid == 3) {
-                var shoe1 = "./images/shoes/kid/<?php echo $recodes['id'];?>.0.jpg";
-                var shoe2 = "./images/shoes/kid/<?php echo $recodes['id'];?>.1.jpg";
-                var shoe3 = "./images/shoes/kid/<?php echo $recodes['id'];?>.2.jpg";
-            }
-            var shoe_name = shoe1;
-
-            function imageChange(num) {
-                if ($num == 1) {
-                    shoe_name = shoe1;
-                } else if ($num == 2) {
-                    shoe_name = shoe2;
-                } else if ($num == 3) {
-                    shoe_name = shoe3;
-                }
-            }
-            document.write(shoe_name);
+            var id = "<?php echo $recodes['id']; ?>";
+            var name = "<?php echo $recodes['name']; ?>";
+            var price = "<?php echo $recodes['price']; ?>";
+            var men_women_kid = "<?php echo $recodes['men_women_kid']; ?>";
+            var discription = "<?php echo $recodes['discription']; ?>";
         </script>
         <div class="row">
             <div class="col-8">
-                <div class="row">
-                    <center><img src="'+shoe_name+'" alt="cloth" style="width:750px;height:500px"></center>
-                </div>
-                
-            </div>
-        </div>
-        <?php include 'before_footer.php'; ?>
-        <!--include footer for home page-->
-        <?php include 'footer.php'; ?>
-    </div>
+                <?php if ($recodes['men_women_kid'] == 1) { ?>
+                    <div class="row">
+                        <center><img id="image" src="./images/shoes/men/<?php echo $recodes['id']; ?>.0.jpg" alt="cloth" style="width:750px;height:500px"></center>
+                    </div>
+                    <div class="row">
+                        <div class="col-2">
+                            <button onclick="document.getElementById('image').src='./images/shoes/men/<?php echo $recodes['id']; ?>.0.jpg'"><img src='./images/shoes/men/<?php echo $recodes['id']; ?>.0.jpg' style="width:150px;height:100px"></button>
+                        </div>
+                        <div class="col-2">
+                            <button onclick="document.getElementById('image').src='./images/shoes/men/<?php echo $recodes['id']; ?>.1.jpg'"><img src='./images/shoes/men/<?php echo $recodes['id']; ?>.1.jpg' style="width:150px;height:100px"></button>
+                        </div>
+                        <div class="col-2">
+                            <button onclick="document.getElementById('image').src='./images/shoes/men/<?php echo $recodes['id']; ?>.2.jpg'"><img src='./images/shoes/men/<?php echo $recodes['id']; ?>.2.jpg' style="width:150px;height:100px"></button>
+                        </div>
+
+                    <?php } else if ($recodes['men_women_kid'] == 2) { ?>
+                        <div class="row">
+                            <center><img id="image" src="./images/shoes/women/<?php echo $recodes['id']; ?>.0.jpg" alt="cloth" style="width:750px;height:500px"></center>
+                        </div>
+                        <div class="row">
+                            <div class="col-2">
+                                <button onclick="document.getElementById('image').src='./images/shoes/women/<?php echo $recodes['id']; ?>.0.jpg'"><img src='./images/shoes/women/<?php echo $recodes['id']; ?>.0.jpg' style="width:150px;height:100px"></button>
+                            </div>
+                            <div class="col-2">
+                                <button onclick="document.getElementById('image').src='./images/shoes/women/<?php echo $recodes['id']; ?>.1.jpg'"><img src='./images/shoes/women/<?php echo $recodes['id']; ?>.1.jpg' style="width:150px;height:100px"></button>
+                            </div>
+                            <div class="col-2">
+                                <button onclick="document.getElementById('image').src='./images/shoes/women/<?php echo $recodes['id']; ?>.2.jpg'"><img src='./images/shoes/women/<?php echo $recodes['id']; ?>.2.jpg' style="width:150px;height:100px"></button>
+                            </div>
+
+                        <?php } else if ($recodes['men_women_kid'] == 3) { ?>
+                            <div class="row">
+                                <center><img id="image" src="./images/shoes/kid/<?php echo $recodes['id']; ?>.0.jpg" alt="cloth" style="width:750px;height:500px"></center>
+                            </div>
+                            <div class="row">
+                                <div class="col-2">
+                                    <button onclick="document.getElementById('image').src='./images/shoes/kid/<?php echo $recodes['id']; ?>.0.jpg'"><img src='./images/shoes/kid/<?php echo $recodes['id']; ?>.0.jpg' style="width:150px;height:100px"></button>
+                                </div>
+                                <div class="col-2">
+                                    <button onclick="document.getElementById('image').src='./images/shoes/kid/<?php echo $recodes['id']; ?>.1.jpg'"><img src='./images/shoes/kid/<?php echo $recodes['id']; ?>.1.jpg' style="width:150px;height:100px"></button>
+                                </div>
+                                <div class="col-2">
+                                    <button onclick="document.getElementById('image').src='./images/shoes/kid/<?php echo $recodes['id']; ?>.2.jpg'"><img src='./images/shoes/kid/<?php echo $recodes['id']; ?>.2.jpg' style="width:150px;height:100px"></button>
+                                </div>
+                            <?php } ?>
+                            </div>
+                        </div>
+                        <?php include 'before_footer.php'; ?>
+                        <!--include footer for home page-->
+                        <?php include 'footer.php'; ?>
+                    </div>
 </body>
 
 </html>

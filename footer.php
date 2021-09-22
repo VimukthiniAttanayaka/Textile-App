@@ -80,13 +80,13 @@ require_once('connection.php');
                 <div class="row">
                     <div class="col">
                         <h2>Categories</h2><br>
-                        <div><a id='url' href="compani.php">Men's Section</a></div><br>
-                        <div><a id='url' href="SignUp-page.php">Women's Section</a></div><br>
-                        <div><a id='url' href="SignUp-page.php">Kids Section</a></div><br>
-                        <div><a id='url' href="SignUp-page.php">Cloths Section</a></div><br>
-                        <div><a id='url' href="SignUp-page.php">Shoes Section</a></div><br>
-                        <div><a id='url' href="SignUp-page.php">Bags Section</a></div><br>
-                        <div><a id='url' href="SignUp-page.php">Toys Section</a></div><br><br>
+                        <div><a id='url' href="../section/mens-section.php">Men's Section</a></div><br>
+                        <div><a id='url' href="../section/womens-section.php">Women's Section</a></div><br>
+                        <div><a id='url' href="../section/kids-section.php">Kids Section</a></div><br>
+                        <div><a id='url' href="../section/cloths-section.php">Cloths Section</a></div><br>
+                        <div><a id='url' href="../section/shoes-section.php">Shoes Section</a></div><br>
+                        <div><a id='url' href="../section/bags-section.php">Bags Section</a></div><br>
+                        <div><a id='url' href="../section/toys-section.php">Toys Section</a></div><br><br>
                     </div>
                     <div class="col">
                         <h2>Information</h2><br>

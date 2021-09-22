@@ -34,7 +34,7 @@ require_once('../connection.php');
     <div class="container-fluid">
         <!--include navbar for home page-->
         <?php include '../navbar.php'; ?>
-        <img src="../images/shoes.png" style="width:100%;">
+        <img src="../images/shoes.png" style="width:100%;"><br><br>
         <div class="row">
 
             <?php
@@ -46,21 +46,21 @@ require_once('../connection.php');
                     $select = mysqli_query($connection, $query);
                     $recodes = mysqli_fetch_assoc($select);
                     if ($recodes['men_women_kid'] == 1) {
-                        $shoe = "../images/shoes/men/$id.0.jpg";
+                        $shoe = "../images/shoes/men/$id.0.png";
                     } else if ($recodes['men_women_kid'] == 2) {
-                        $shoe = "../images/shoes/women/$id.0.jpg";
+                        $shoe = "../images/shoes/women/$id.0.png";
                     } else if ($recodes['men_women_kid'] == 3) {
-                        $shoe = "../images/shoes/kid/$id.0.jpg";
+                        $shoe = "../images/shoes/kid/$id.0.png";
                     }
                     $id=$id;
                     $catagery = "shoes";
-                    $url="../item_page1.php?id={$id} & catagery={$catagery}";
+                    $url="../components/item_page1.php?id={$id} & catagery={$catagery}";
                 ?> 
 
                 <div class="col-4">
                     <a id='url' href="<?php echo $url;?>">
                         <div>
-                            <center><img src=<?php echo $shoe ?> alt="cloth" style="width:300px;height:200px"></center>
+                            <center><img src=<?php echo $shoe ?> alt="cloth" style="width:300px;height:300px"></center>
                         </div>
                     </a>
                     <div>

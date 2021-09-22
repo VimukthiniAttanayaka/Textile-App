@@ -14,6 +14,9 @@
         #nav-url{
           color: black;
         }
+        .col-5-lg{
+          padding-left: 10%;
+        }
     </style>
 </head>
 
@@ -27,28 +30,22 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
+              <a class="nav-link active" aria-current="page" href="../components/home.php">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Men's</a>
+              <a class="nav-link" href="../section/mens-section.php">Men's</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Women's</a>
+              <a class="nav-link" href="../section/womens-section.php">Women's</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Kids</a>
-            </li>
-            <li>
-              <form class="d-flex">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit"><i class='fas fa-search' style='font-size:24px'></i></button>
-              </form>
+              <a class="nav-link" href="../section/kids-section.php">Kids</a>
             </li>
           </ul>
         </div>
       </div>
       <div class="col-4">
-        <img src="./images/logo.png" alt="home" style="width:150px;">
+        <img src="../images/logo.png" alt="home" style="width:150px;">
       </div>
       <div class="col-1">
         <!-- Button trigger modal -->
@@ -64,7 +61,7 @@
           <i class='fas fa-user-circle' style='font-size:36px;vertical-align: middle;'></i>
         </div>
         <div class="row">
-          <p><a id='nav-url' href="client_register.php">SignUp</a> / <a id='nav-url' href="client_login.php">LogIn</a></p>
+          <p><a id='nav-url' href="../login/client_register.php">SignUp</a> / <a id='nav-url' href="../login/client_login.php">LogIn</a></p>
         </div>
       </div>
     </div>
