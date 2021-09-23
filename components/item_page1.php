@@ -2,8 +2,7 @@
 //connect with database
 require_once('../connection.php');
 ?>
-<!--start session-->
-<?php session_start(); ?>
+
 <!DOCTYPE html>
 <html>
 
@@ -31,7 +30,8 @@ require_once('../connection.php');
         <?php include '../navbar.php'; ?>
 
         <?php
-        $id = $_GET['id'];
+
+        $id= $_GET['id'];
         $catagery = $_GET['catagery'];
 
         $recodes['men_women_kid']=0;
@@ -46,6 +46,7 @@ require_once('../connection.php');
         }
         $select = mysqli_query($connection, $query);
         $recodes = mysqli_fetch_assoc($select); ?>
+
         <div class="row">
             <div class="col-8">
                 <?php if($catagery=='shoes'||$catagery=='cloths'){?>
@@ -173,7 +174,9 @@ require_once('../connection.php');
                 <h3><?php echo $recodes['name']; ?></h3>
                 <h5>Rs.<?php echo $recodes['price']; ?></h5>
 
-                <form method="post" action="<?php echo $_SERVER["PHP_SELF"]; ?>">
+                <?php $url="../add_cart.php?id={$id}& catagery={$catagery}";?>
+
+                <form method="post" action="<?php echo $url;?>">
                 <?php if($catagery=='shoes'||$catagery=='cloths'){?>
                     <p id='label'><label for="size">Size:</label>
                     <?php if($recodes['men_women_kid']==1){ ?>
@@ -196,9 +199,8 @@ require_once('../connection.php');
                     </p>
                     <?php } ?>
                     <p id='label'><label for="quentity">Quentity: </label>
-                        <input type="number" min="0" name="quentity" placeholder="">
+                        <input type="number" min="1" name="quentity" placeholder="">
                     <p>
-
                         <center>
                             <button class="btn btn-primary" type="submit" name="submit" style="width: 250px;">
                                 Add To Cart

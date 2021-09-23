@@ -100,7 +100,7 @@ require_once('connection.php');
                 </div>
                 <div class="row">
                     <br><br><br><h3>Accepted payment methods</h3>
-                    <img src="./images/payment-method.png" alt="payment methods" style="width:280px;height:50px;">
+                    <img src="../images/payment-method.png" alt="payment methods" style="width:280px;height:50px;">
                 </div>
             </div>
         </div>

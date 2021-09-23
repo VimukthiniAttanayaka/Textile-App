@@ -106,7 +106,7 @@ require_once('../connection.php');
                 }
                 $id=$shoes_index[$i];
                 $catagery = "shoes";
-                $url="item_page1.php?id={$id} & catagery={$catagery}";
+                $url="item_page1.php?id={$id}& catagery={$catagery}";
             ?>
                 <div class="col-4">
                     <a id='url' href="<?php echo $url;?>">

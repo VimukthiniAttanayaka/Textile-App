@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Sep 22, 2021 at 03:26 AM
+-- Generation Time: Sep 23, 2021 at 05:20 AM
 -- Server version: 8.0.21
 -- PHP Version: 7.3.21
 
@@ -62,6 +62,35 @@ INSERT INTO `bags` (`id`, `name`, `price`, `discription`, `total_item`) VALUES
 (3, 'Unisex Sea Green Solid Backpack', 4599.99, 'This bag of Provogue comes with spacious comparment with unique design', 10),
 (4, 'Unisex Brown Solid Backpack', 1999.99, 'Brown solid backpack Padded haul loop, ergonomic shoulder straps', 10),
 (5, 'Unisex Grey & Black Solid Training Duffel Bag', 1999.99, 'Black solid gym duffel bag One shoulder strap', 10);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `cart`
+--
+
+DROP TABLE IF EXISTS `cart`;
+CREATE TABLE IF NOT EXISTS `cart` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `product_id` int NOT NULL,
+  `catagory` varchar(100) NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `price` double NOT NULL,
+  `size` int NOT NULL,
+  `quentity` int NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `cart`
+--
+
+INSERT INTO `cart` (`id`, `product_id`, `catagory`, `name`, `price`, `size`, `quentity`) VALUES
+(1, 1, 'cloths', 'Checked Lounge Set', 2499.99, 37, 0),
+(2, 2, 'cloths', 'Heathered Pyjamas with Elasticated Waist', 2999.99, 37, 0),
+(3, 5, 'cloths', 'Slim Fit Shirt with Patch Pocket', 1699.99, 37, 0),
+(4, 3, 'shoes', 'Marathon Skin Black', 5499.99, 37, 0),
+(5, 7, 'cloths', 'Ankle Length Slim Fit Cargo Pants', 4999.99, 37, 0);
 
 -- --------------------------------------------------------
 

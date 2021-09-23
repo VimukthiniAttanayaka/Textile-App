@@ -45,7 +45,7 @@
         </div>
       </div>
       <div class="col-4">
-        <img src="../images/logo.png" alt="home" style="width:150px;">
+        <img src="../images/logo.png" alt="home" style="width:250px;">
       </div>
       <div class="col-1">
         <!-- Button trigger modal -->
