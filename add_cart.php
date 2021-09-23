@@ -62,7 +62,7 @@ require_once('connection.php');
         
         ?>
         <center>
-            <a id='back_to_shopping' href="./components/home.php">
+            <a id='back_to_shopping' href="./index.php">
                 <button class="btn btn-info">
                     <h2>Back To Shopping</h2>
                 </button>
@@ -74,9 +74,3 @@ require_once('connection.php');
 </html>
 <!--end connection with database-->
 <?php mysqli_close($connection); ?>
-<!--$product_id = $recodes['id'];
-                $name = $recodes['name'];
-                $price = $recodes['price'];
-                $cart = "INSERT INTO cart (product_id,catagory,name,price,size,quentity) 
-                VALUES ('$product_id','$catagery','$name','$price','$size','$quentity' )";
-                mysqli_query($connection, $cart);-->

@@ -51,7 +51,6 @@ require_once('connection.php');
         else {
             $query = "INSERT INTO feedback_form(name,phone_no,email,feedback) VALUES ('$name','$phone_no','$email','$feedback')";
             mysqli_query($connection, $query);
-            header("Location: ./connection.php?sighup=success");
         }
     }
     ?>
@@ -80,13 +79,13 @@ require_once('connection.php');
                 <div class="row">
                     <div class="col">
                         <h2>Categories</h2><br>
-                        <div><a id='url' href="../section/mens-section.php">Men's Section</a></div><br>
-                        <div><a id='url' href="../section/womens-section.php">Women's Section</a></div><br>
-                        <div><a id='url' href="../section/kids-section.php">Kids Section</a></div><br>
-                        <div><a id='url' href="../section/cloths-section.php">Cloths Section</a></div><br>
-                        <div><a id='url' href="../section/shoes-section.php">Shoes Section</a></div><br>
-                        <div><a id='url' href="../section/bags-section.php">Bags Section</a></div><br>
-                        <div><a id='url' href="../section/toys-section.php">Toys Section</a></div><br><br>
+                        <div><a id='url' href="mens-section.php">Men's Section</a></div><br>
+                        <div><a id='url' href="womens-section.php">Women's Section</a></div><br>
+                        <div><a id='url' href="kids-section.php">Kids Section</a></div><br>
+                        <div><a id='url' href="cloths-section.php">Cloths Section</a></div><br>
+                        <div><a id='url' href="shoes-section.php">Shoes Section</a></div><br>
+                        <div><a id='url' href="bags-section.php">Bags Section</a></div><br>
+                        <div><a id='url' href="toys-section.php">Toys Section</a></div><br><br>
                     </div>
                     <div class="col">
                         <h2>Information</h2><br>
@@ -100,7 +99,7 @@ require_once('connection.php');
                 </div>
                 <div class="row">
                     <br><br><br><h3>Accepted payment methods</h3>
-                    <img src="../images/payment-method.png" alt="payment methods" style="width:280px;height:50px;">
+                    <img src="images/payment-method.png" alt="payment methods" style="width:280px;height:50px;">
                 </div>
             </div>
         </div>

@@ -1,6 +1,6 @@
 <?php
 //connect with database
-require_once('../connection.php');
+require_once('connection.php');
 ?>
 
 <!DOCTYPE html>
@@ -27,7 +27,7 @@ require_once('../connection.php');
 <body>
     <div class="container-fluid">
         <!--include navbar for home page-->
-        <?php include '../navbar.php'; ?>
+        <?php include 'navbar.php'; ?>
 
         <?php
 
@@ -54,7 +54,7 @@ require_once('../connection.php');
                         <div class="row">
                             <center>
                                 <img id="image" 
-                                    src="../images/<?php echo $catagery ?>/men/<?php echo $recodes['id']; ?>.0.png" 
+                                    src="images/<?php echo $catagery ?>/men/<?php echo $recodes['id']; ?>.0.png" 
                                     alt="cloth" 
                                     style="width:500px;height:500px">
                             </center>
@@ -62,20 +62,20 @@ require_once('../connection.php');
                         <div class="row">
                             <div class="col-2">
                                 <button 
-                                onclick="document.getElementById('image').src='../images/<?php echo $catagery ?>/men/<?php echo $recodes['id']; ?>.0.png'">
-                                    <img src='../images/<?php echo $catagery ?>/men/<?php echo $recodes['id']; ?>.0.png' style="width:100px;height:100px">
+                                onclick="document.getElementById('image').src='images/<?php echo $catagery ?>/men/<?php echo $recodes['id']; ?>.0.png'">
+                                    <img src='images/<?php echo $catagery ?>/men/<?php echo $recodes['id']; ?>.0.png' style="width:100px;height:100px">
                                 </button>
                             </div>
                             <div class="col-2">
                                 <button 
-                                onclick="document.getElementById('image').src='../images/<?php echo $catagery ?>/men/<?php echo $recodes['id']; ?>.1.png'">
-                                    <img src='../images/<?php echo $catagery ?>/men/<?php echo $recodes['id']; ?>.1.png' style="width:100px;height:100px">
+                                onclick="document.getElementById('image').src='images/<?php echo $catagery ?>/men/<?php echo $recodes['id']; ?>.1.png'">
+                                    <img src='images/<?php echo $catagery ?>/men/<?php echo $recodes['id']; ?>.1.png' style="width:100px;height:100px">
                                 </button>
                             </div>
                             <div class="col-2">
                                 <button 
-                                onclick="document.getElementById('image').src='../images/<?php echo $catagery ?>/men/<?php echo $recodes['id']; ?>.2.png'">
-                                    <img src='../images/<?php echo $catagery ?>/men/<?php echo $recodes['id']; ?>.2.png' style="width:100px;height:100px">
+                                onclick="document.getElementById('image').src='images/<?php echo $catagery ?>/men/<?php echo $recodes['id']; ?>.2.png'">
+                                    <img src='images/<?php echo $catagery ?>/men/<?php echo $recodes['id']; ?>.2.png' style="width:100px;height:100px">
                                 </button>
                             </div>
                         </div>
@@ -83,7 +83,7 @@ require_once('../connection.php');
                         <div class="row">
                             <center>
                                 <img id="image" 
-                                    src="../images/<?php echo $catagery ?>/women/<?php echo $recodes['id']; ?>.0.png" 
+                                    src="images/<?php echo $catagery ?>/women/<?php echo $recodes['id']; ?>.0.png" 
                                     alt="cloth" 
                                     style="width:500px;height:500px">
                             </center>
@@ -91,20 +91,20 @@ require_once('../connection.php');
                         <div class="row">
                             <div class="col-2">
                                 <button 
-                                onclick="document.getElementById('image').src='../images/<?php echo $catagery ?>/women/<?php echo $recodes['id']; ?>.0.png'">
-                                    <img src='../images/<?php echo $catagery ?>/women/<?php echo $recodes['id']; ?>.0.png' style="width:100px;height:100px">
+                                onclick="document.getElementById('image').src='images/<?php echo $catagery ?>/women/<?php echo $recodes['id']; ?>.0.png'">
+                                    <img src='images/<?php echo $catagery ?>/women/<?php echo $recodes['id']; ?>.0.png' style="width:100px;height:100px">
                                 </button>   
                             </div>
                             <div class="col-2">
                                 <button 
-                                onclick="document.getElementById('image').src='../images/<?php echo $catagery ?>/women/<?php echo $recodes['id']; ?>.1.png'">
-                                    <img src='../images/<?php echo $catagery ?>/women/<?php echo $recodes['id']; ?>.1.png' style="width:100px;height:100px">
+                                onclick="document.getElementById('image').src='images/<?php echo $catagery ?>/women/<?php echo $recodes['id']; ?>.1.png'">
+                                    <img src='images/<?php echo $catagery ?>/women/<?php echo $recodes['id']; ?>.1.png' style="width:100px;height:100px">
                                 </button>
                             </div>
                             <div class="col-2">
                                 <button 
-                                onclick="document.getElementById('image').src='../images/<?php echo $catagery ?>/women/<?php echo $recodes['id']; ?>.2.png'">
-                                    <img src='../images/<?php echo $catagery ?>/women/<?php echo $recodes['id']; ?>.2.png' style="width:100px;height:100px">
+                                onclick="document.getElementById('image').src='images/<?php echo $catagery ?>/women/<?php echo $recodes['id']; ?>.2.png'">
+                                    <img src='images/<?php echo $catagery ?>/women/<?php echo $recodes['id']; ?>.2.png' style="width:100px;height:100px">
                                 </button>
                             </div>
                         </div>
@@ -112,7 +112,7 @@ require_once('../connection.php');
                         <div class="row">
                             <center>
                                 <img id="image" 
-                                src="../images/<?php echo $catagery ?>/kid/<?php echo $recodes['id']; ?>.0.png" 
+                                src="images/<?php echo $catagery ?>/kid/<?php echo $recodes['id']; ?>.0.png" 
                                 alt="cloth" 
                                 style="width:500px;height:500px">
                             </center>
@@ -120,20 +120,20 @@ require_once('../connection.php');
                         <div class="row">
                             <div class="col-2">
                                 <button 
-                                onclick="document.getElementById('image').src='../images/<?php echo $catagery ?>/kid/<?php echo $recodes['id']; ?>.0.png'">
-                                    <img src='../images/<?php echo $catagery ?>/kid/<?php echo $recodes['id']; ?>.0.jpg' style="width:100px;height:100px">
+                                onclick="document.getElementById('image').src='images/<?php echo $catagery ?>/kid/<?php echo $recodes['id']; ?>.0.png'">
+                                    <img src='images/<?php echo $catagery ?>/kid/<?php echo $recodes['id']; ?>.0.jpg' style="width:100px;height:100px">
                                 </button>
                             </div>
                             <div class="col-2">
                                 <button 
-                                onclick="document.getElementById('image').src='../images/<?php echo $catagery ?>/kid/<?php echo $recodes['id']; ?>.1.png'">
-                                    <img src='../images/<?php echo $catagery ?>/kid/<?php echo $recodes['id']; ?>.1.jpg' style="width:100px;height:100px">
+                                onclick="document.getElementById('image').src='images/<?php echo $catagery ?>/kid/<?php echo $recodes['id']; ?>.1.png'">
+                                    <img src='images/<?php echo $catagery ?>/kid/<?php echo $recodes['id']; ?>.1.jpg' style="width:100px;height:100px">
                                 </button>
                             </div>
                             <div class="col-2">
                                 <button 
-                                onclick="document.getElementById('image').src='../images/<?php echo $catagery ?>/kid/<?php echo $recodes['id']; ?>.2.png'">
-                                    <img src='../images/<?php echo $catagery ?>/kid/<?php echo $recodes['id']; ?>.2.jpg' style="width:100px;height:100px">
+                                onclick="document.getElementById('image').src='images/<?php echo $catagery ?>/kid/<?php echo $recodes['id']; ?>.2.png'">
+                                    <img src='images/<?php echo $catagery ?>/kid/<?php echo $recodes['id']; ?>.2.jpg' style="width:100px;height:100px">
                                 </button>
                             </div>
                         </div>
@@ -142,7 +142,7 @@ require_once('../connection.php');
                     <div class="row">
                         <center>
                             <img id="image" 
-                                src="../images/<?php echo $catagery ?>/<?php echo $recodes['id']; ?>.0.png" 
+                                src="images/<?php echo $catagery ?>/<?php echo $recodes['id']; ?>.0.png" 
                                 alt="cloth" 
                                 style="width:500px;height:500px">
                         </center>
@@ -150,20 +150,20 @@ require_once('../connection.php');
                     <div class="row">
                         <div class="col-2">
                             <button 
-                            onclick="document.getElementById('image').src='../images/<?php echo $catagery ?>/<?php echo $recodes['id']; ?>.0.png'">
-                                <img src='../images/<?php echo $catagery ?>/<?php echo $recodes['id']; ?>.0.png' style="width:100px;height:100px">
+                            onclick="document.getElementById('image').src='images/<?php echo $catagery ?>/<?php echo $recodes['id']; ?>.0.png'">
+                                <img src='images/<?php echo $catagery ?>/<?php echo $recodes['id']; ?>.0.png' style="width:100px;height:100px">
                             </button>
                         </div>
                         <div class="col-2">
                             <button 
-                            onclick="document.getElementById('image').src='../images/<?php echo $catagery ?>/<?php echo $recodes['id']; ?>.1.png'">
-                                <img src='../images/<?php echo $catagery ?>/<?php echo $recodes['id']; ?>.1.png' style="width:100px;height:100px">
+                            onclick="document.getElementById('image').src='images/<?php echo $catagery ?>/<?php echo $recodes['id']; ?>.1.png'">
+                                <img src='images/<?php echo $catagery ?>/<?php echo $recodes['id']; ?>.1.png' style="width:100px;height:100px">
                             </button>
                         </div>
                         <div class="col-2">
                             <button 
-                            onclick="document.getElementById('image').src='../images/<?php echo $catagery ?>/<?php echo $recodes['id']; ?>.2.png'">
-                                <img src='../images/<?php echo $catagery ?>/<?php echo $recodes['id']; ?>.2.png' style="width:100px;height:100px">
+                            onclick="document.getElementById('image').src='images/<?php echo $catagery ?>/<?php echo $recodes['id']; ?>.2.png'">
+                                <img src='images/<?php echo $catagery ?>/<?php echo $recodes['id']; ?>.2.png' style="width:100px;height:100px">
                             </button>
                         </div>
                     </div>
@@ -174,7 +174,7 @@ require_once('../connection.php');
                 <h3><?php echo $recodes['name']; ?></h3>
                 <h5>Rs.<?php echo $recodes['price']; ?></h5>
 
-                <?php $url="../add_cart.php?id={$id}& catagery={$catagery}";?>
+                <?php $url="add_cart.php?id={$id}& catagery={$catagery}";?>
 
                 <form method="post" action="<?php echo $url;?>">
                 <?php if($catagery=='shoes'||$catagery=='cloths'){?>
@@ -194,6 +194,14 @@ require_once('../connection.php');
                             <option value="39">35</option>
                             <option value="40">36</option>
                             <option value="41">37</option>
+                        </select>
+                        <?php } else if($recodes['men_women_kid']==3){?>
+                            <select name="size">
+                            <option value="37">10</option>
+                            <option value="38">11</option>
+                            <option value="39">12</option>
+                            <option value="40">13</option>
+                            <option value="41">14</option>
                         </select>
                         <?php } ?>
                     </p>
@@ -223,9 +231,9 @@ require_once('../connection.php');
             </a>
         </center>
         <br>
-        <?php include '../before_footer.php'; ?>
+        <?php include 'before_footer.php'; ?>
         <!--include footer for home page-->
-        <?php include '../footer.php'; ?>
+        <?php include 'footer.php'; ?>
     </div>
 </body>
 

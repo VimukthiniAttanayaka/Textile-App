@@ -1,6 +1,6 @@
 <?php
 //connect with database
-require_once('../connection.php');
+require_once('connection.php');
 ?>
 <!DOCTYPE html>
 <html>
@@ -9,7 +9,7 @@ require_once('../connection.php');
     <meta charset="UTF-8">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <title>Kids Section</title>
+    <title>Womens Section</title>
     <style>
         .container-fluid {
             padding: 0px !important;
@@ -33,29 +33,29 @@ require_once('../connection.php');
 <body>
     <div class="container-fluid">
         <!--include navbar for home page-->
-        <?php include '../navbar.php'; ?>
-        <img src="../images/kids.jpg" style="width:100%;"><br><br>
+        <?php include 'navbar.php'; ?>
+        <img src="images/womens.jpg" style="width:100%;"><br><br>
 
         <div class="row">
             <!-- cloths-->
             <?php
-                $query1 = "SELECT * FROM cloths WHERE men_women_kid =3";
+                $query1 = "SELECT * FROM cloths WHERE men_women_kid =2";
                 $select1 = mysqli_query($connection, $query1);
                 while ($recodes1 = mysqli_fetch_assoc($select1)) {
                     $id=$recodes1['id'];
                     $query = "SELECT * FROM `cloths` WHERE id=$id";
                     $select = mysqli_query($connection, $query);
                     $recodes = mysqli_fetch_assoc($select);
-                    $cloth = "../images/cloths/kid/$id.0.png";
+                    $cloth = "images/cloths/women/$id.0.png";
                     $id=$id;
                     $catagery = "cloths";
-                    $url="../components/item_page1.php?id={$id} & catagery={$catagery}";
+                    $url="item_page1.php?id={$id} & catagery={$catagery}";
                 ?> 
 
                 <div class="col-4">
                     <a id='url' href="<?php echo $url;?>">
                         <div>
-                            <center><img src=<?php echo $cloth ?> alt="cloth" style="width:300px;height:300px"></center>
+                            <center><img src=<?php echo $cloth ?> alt="cloth" style="width:80%"></center>
                         </div>
                     </a>
                     <div>
@@ -70,55 +70,23 @@ require_once('../connection.php');
             <?php } ?>
             <!--shoes-->
             <?php
-                $query1 = "SELECT * FROM shoes WHERE men_women_kid =3";
+                $query1 = "SELECT * FROM shoes WHERE men_women_kid =2";
                 $select1 = mysqli_query($connection, $query1);
                 while ($recodes1 = mysqli_fetch_assoc($select1)) {
                     $id=$recodes1['id'];
                     $query = "SELECT * FROM `shoes` WHERE id=$id";
                     $select = mysqli_query($connection, $query);
                     $recodes = mysqli_fetch_assoc($select);
-                    $shoe = "../images/shoes/kid/$id.0.png";
+                    $shoe = "images/shoes/women/$id.0.png";
                     $id=$id;
                     $catagery = "shoes";
-                    $url="../components/item_page1.php?id={$id} & catagery={$catagery}";
+                    $url="item_page1.php?id={$id} & catagery={$catagery}";
                 ?> 
 
                 <div class="col-4">
                     <a id='url' href="<?php echo $url;?>">
                         <div>
-                            <center><img src=<?php echo $shoe ?> alt="shoes" style="width:300px;height:300px"></center>
-                        </div>
-                    </a>
-                    <div>
-                        <center><?php echo $recodes['name']; ?></center>
-                    </div>
-                    <div>
-                        <center>
-                            <h5>Rs.<?php echo $recodes['price']; ?></h5>
-                        </center>
-                    </div>
-                </div>
-            <?php } ?>
-
-            <!--toys-->
-            <?php
-                $query1 = "SELECT * FROM toys";
-                $select1 = mysqli_query($connection, $query1);
-                while ($recodes1 = mysqli_fetch_assoc($select1)) {
-                    $id=$recodes1['id'];
-                    $query = "SELECT * FROM `toys` WHERE id=$id";
-                    $select = mysqli_query($connection, $query);
-                    $recodes = mysqli_fetch_assoc($select);
-                        $toy = "../images/toys/$id.0.png";
-                    $id=$id;
-                    $catagery = "toys";
-                    $url="../components/item_page1.php?id={$id} & catagery={$catagery}";
-                ?> 
-
-                <div class="col-4">
-                    <a id='url' href="<?php echo $url;?>">
-                        <div>
-                            <center><img src=<?php echo $toy ?> alt="cloth" style="width:300px;height:300px"></center>
+                            <center><img src=<?php echo $shoe ?> alt="shoes" style="width:80%"></center>
                         </div>
                     </a>
                     <div>
@@ -141,16 +109,16 @@ require_once('../connection.php');
                     $query = "SELECT * FROM `bags` WHERE id=$id";
                     $select = mysqli_query($connection, $query);
                     $recodes = mysqli_fetch_assoc($select);
-                    $bag = "../images/bags/$id.0.png";
+                        $bag = "images/bags/$id.0.png";
                     $id=$id;
                     $catagery = "bags";
-                    $url="../components/item_page1.php?id={$id} & catagery={$catagery}";
+                    $url="item_page1.php?id={$id} & catagery={$catagery}";
                 ?> 
 
                 <div class="col-4">
                     <a id='url' href="<?php echo $url;?>">
                         <div>
-                            <center><img src=<?php echo $bag ?> alt="bag" style="width:300px;height:300px"></center>
+                            <center><img src=<?php echo $bag ?> alt="cloth" style="width:80%"></center>
                         </div>
                     </a>
                     <div>
@@ -164,13 +132,9 @@ require_once('../connection.php');
                 </div>
             <?php } ?>
         </div>
-        <?php include '../before_footer.php'; ?>
+        <?php include 'before_footer.php'; ?>
         <!--include footer for home page-->
-        <?php include '../footer.php'; ?>
-        </div>
-        <?php include '../before_footer.php'; ?>
-        <!--include footer for home page-->
-        <?php include '../footer.php'; ?>
+        <?php include 'footer.php'; ?>
     </div>
 </body>
 

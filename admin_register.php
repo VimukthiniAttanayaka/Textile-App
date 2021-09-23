@@ -1,6 +1,6 @@
 <?php
 //connect with database
-require_once('../connection.php');
+require_once('connection.php');
 ?>
 <!DOCTYPE html>
 <html>
@@ -17,7 +17,7 @@ require_once('../connection.php');
         }
 
         body {
-            background-image: url("../images/login-background.jpg");
+            background-image: url("images/login-background.jpg");
             background-repeat: no-repeat;
             background-size: 100%;
         }
@@ -38,7 +38,7 @@ require_once('../connection.php');
 <body>
     <div class="container-fluid">
         <!--include navbar for home page-->
-        <?php include '../navbar.php'; ?>
+        <?php include 'navbar.php'; ?>
         <div>
             <?php
             //variable for store errer messages 

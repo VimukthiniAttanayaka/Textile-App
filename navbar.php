@@ -30,22 +30,22 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="../components/home.php">Home</a>
+              <a class="nav-link active" aria-current="page" href="index.php">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="../section/mens-section.php">Men's</a>
+              <a class="nav-link" href="mens-section.php">Men's</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="../section/womens-section.php">Women's</a>
+              <a class="nav-link" href="womens-section.php">Women's</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="../section/kids-section.php">Kids</a>
+              <a class="nav-link" href="kids-section.php">Kids</a>
             </li>
           </ul>
         </div>
       </div>
       <div class="col-4">
-        <img src="../images/logo.png" alt="home" style="width:250px;">
+        <img src="images/logo.png" alt="home" style="width:250px;">
       </div>
       <div class="col-1">
         <!-- Button trigger modal -->
@@ -61,7 +61,7 @@
           <i class='fas fa-user-circle' style='font-size:36px;vertical-align: middle;'></i>
         </div>
         <div class="row">
-          <p><a id='nav-url' href="../login/client_register.php">SignUp</a> / <a id='nav-url' href="../login/client_login.php">LogIn</a></p>
+          <p><a id='nav-url' href="client_register.php">SignUp</a> / <a id='nav-url' href="client_login.php">LogIn</a></p>
         </div>
       </div>
     </div>

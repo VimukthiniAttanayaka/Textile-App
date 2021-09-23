@@ -1,6 +1,6 @@
 <?php
 //connect with database
-require_once('../connection.php');
+require_once('connection.php');
 ?>
 <!DOCTYPE html>
 <html>
@@ -33,8 +33,8 @@ require_once('../connection.php');
 <body>
     <div class="container-fluid">
         <!--include navbar for home page-->
-        <?php include '../navbar.php'; ?>
-        <img src="../images/mens.jpg" style="width:100%;"><br><br>
+        <?php include 'navbar.php'; ?>
+        <img src="images/mens.jpg" style="width:100%;"><br><br>
 
         <div class="row">
             <!-- cloths-->
@@ -46,16 +46,16 @@ require_once('../connection.php');
                     $query = "SELECT * FROM `cloths` WHERE id=$id";
                     $select = mysqli_query($connection, $query);
                     $recodes = mysqli_fetch_assoc($select);
-                    $cloth = "../images/cloths/men/$id.0.png";
+                    $cloth = "images/cloths/men/$id.0.png";
                     $id=$id;
                     $catagery = "cloths";
-                    $url="../components/item_page1.php?id={$id} & catagery={$catagery}";
+                    $url="item_page1.php?id={$id} & catagery={$catagery}";
                 ?> 
 
                 <div class="col-4">
                     <a id='url' href="<?php echo $url;?>">
                         <div>
-                            <center><img src=<?php echo $cloth ?> alt="cloth" style="width:300px;height:300px"></center>
+                            <center><img src=<?php echo $cloth ?> alt="cloth" style="width:80%"></center>
                         </div>
                     </a>
                     <div>
@@ -77,16 +77,16 @@ require_once('../connection.php');
                     $query = "SELECT * FROM `shoes` WHERE id=$id";
                     $select = mysqli_query($connection, $query);
                     $recodes = mysqli_fetch_assoc($select);
-                    $shoe = "../images/shoes/men/$id.0.png";
+                    $shoe = "images/shoes/men/$id.0.png";
                     $id=$id;
                     $catagery = "shoes";
-                    $url="../components/item_page1.php?id={$id} & catagery={$catagery}";
+                    $url="item_page1.php?id={$id} & catagery={$catagery}";
                 ?> 
 
                 <div class="col-4">
                     <a id='url' href="<?php echo $url;?>">
                         <div>
-                            <center><img src=<?php echo $shoe ?> alt="shoes" style="width:300px;height:300px"></center>
+                            <center><img src=<?php echo $shoe ?> alt="shoes" style="width:80%"></center>
                         </div>
                     </a>
                     <div>
@@ -109,16 +109,16 @@ require_once('../connection.php');
                     $query = "SELECT * FROM `bags` WHERE id=$id";
                     $select = mysqli_query($connection, $query);
                     $recodes = mysqli_fetch_assoc($select);
-                        $bag = "../images/bags/$id.0.png";
+                        $bag = "images/bags/$id.0.png";
                     $id=$id;
                     $catagery = "bags";
-                    $url="../components/item_page1.php?id={$id} & catagery={$catagery}";
+                    $url="item_page1.php?id={$id} & catagery={$catagery}";
                 ?> 
 
                 <div class="col-4">
                     <a id='url' href="<?php echo $url;?>">
                         <div>
-                            <center><img src=<?php echo $bag ?> alt="cloth" style="width:300px;height:300px"></center>
+                            <center><img src=<?php echo $bag ?> alt="cloth" style="width:80%"></center>
                         </div>
                     </a>
                     <div>
@@ -132,9 +132,9 @@ require_once('../connection.php');
                 </div>
             <?php } ?>
         </div>
-        <?php include '../before_footer.php'; ?>
+        <?php include 'before_footer.php'; ?>
         <!--include footer for home page-->
-        <?php include '../footer.php'; ?>
+        <?php include 'footer.php'; ?>
     </div>
 </body>
 

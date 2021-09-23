@@ -1,6 +1,6 @@
 <?php
 //connect with database
-require_once('../connection.php');
+require_once('connection.php');
 ?>
 <!DOCTYPE html>
 <html>
@@ -33,16 +33,16 @@ require_once('../connection.php');
 <body>
     <div class="container-fluid">
         <!--include navbar for home page-->
-        <?php include '../navbar.php'; ?>
+        <?php include 'navbar.php'; ?>
         <!--home page image-->
-        <img src="../images/home.jpg" alt="home" style="width:100%;">
+        <img src="images/home.jpg" alt="home" style="width:100%;">
         <!--cloths section-->
         <h1>
             <center>Cloths Section</center>
         </h1>
-        <img src="../images/cloths.png" style="width:100%;"><br><br><br>
+        <img src="images/cloths.png" style="width:100%;"><br><br><br>
         <h3>
-            <center><a id='view-all' href="../section/cloths-section.php">View All</a></center>
+            <center><a id='view-all' href="cloths-section.php">View All</a></center>
         </h3><br><br>
         <div class="row">
 
@@ -53,11 +53,11 @@ require_once('../connection.php');
                 $select = mysqli_query($connection, $query);
                 $recodes = mysqli_fetch_assoc($select);
                 if ($recodes['men_women_kid'] == 1) {
-                    $cloth = "../images/cloths/men/$cloths_index[$i].0.png";
+                    $cloth = "images/cloths/men/$cloths_index[$i].0.png";
                 } else if ($recodes['men_women_kid'] == 2) {
-                    $cloth = "../images/cloths/women/$cloths_index[$i].0.png";
+                    $cloth = "images/cloths/women/$cloths_index[$i].0.png";
                 } else if ($recodes['men_women_kid'] == 3) {
-                    $cloth = "../images/cloths/kid/$cloths_index[$i].0.png";
+                    $cloth = "images/cloths/kid/$cloths_index[$i].0.png";
                 }
                 $id=$cloths_index[$i];
                 $catagery = "cloths";
@@ -66,7 +66,7 @@ require_once('../connection.php');
                 <div class="col-4">
                     <a id='url' href="<?php echo $url;?>">
                         <div>
-                            <center><img src=<?php echo $cloth ?> alt="cloth" style="width:300px;height:300px"></center>
+                            <center><img src=<?php echo $cloth ?> alt="cloth" style="width:80%"></center>
                         </div>
                     </a>
                     <div>
@@ -84,9 +84,9 @@ require_once('../connection.php');
         <h1>
             <center>Shoes Section</center>
         </h1>
-        <img src="../images/shoes.png" style="width:100%;"><br><br><br>
+        <img src="images/shoes.png" style="width:100%;"><br><br><br>
         <h3>
-            <center><a id='view-all' href="../section/shoes-section.php">View All</a></center>
+            <center><a id='view-all' href="shoes-section.php">View All</a></center>
         </h3><br><br>
 
         <div class="row">
@@ -98,11 +98,11 @@ require_once('../connection.php');
                 $select = mysqli_query($connection, $query);
                 $recodes = mysqli_fetch_assoc($select);
                 if ($recodes['men_women_kid'] == 1) {
-                    $shoe = "../images/shoes/men/$shoes_index[$i].0.png";
+                    $shoe = "images/shoes/men/$shoes_index[$i].0.png";
                 } else if ($recodes['men_women_kid'] == 2) {
-                    $shoe = "../images/shoes/women/$shoes_index[$i].0.png";
+                    $shoe = "images/shoes/women/$shoes_index[$i].0.png";
                 } else if ($recodes['men_women_kid'] == 3) {
-                    $shoe = "../images/shoes/kid/$shoes_index[$i].0.png";
+                    $shoe = "images/shoes/kid/$shoes_index[$i].0.png";
                 }
                 $id=$shoes_index[$i];
                 $catagery = "shoes";
@@ -111,7 +111,7 @@ require_once('../connection.php');
                 <div class="col-4">
                     <a id='url' href="<?php echo $url;?>">
                         <div>
-                            <center><img src=<?php echo $shoe ?> alt="cloth" style="width:300px;height:300px"></center>
+                            <center><img src=<?php echo $shoe ?> alt="cloth" style="width:85%"></center>
                         </div>
                     </a>
                     <div>
@@ -129,9 +129,9 @@ require_once('../connection.php');
         <h1>
             <center>Bags Section</center>
         </h1>
-        <img src="../images/bags.png" style="width:100%;"><br><br><br>
+        <img src="images/bags.png" style="width:100%;"><br><br><br>
         <h3>
-            <center><a id='view-all' href="../section/bags-section.php">View All</a></center>
+            <center><a id='view-all' href="bags-section.php">View All</a></center>
         </h3><br><br>
 
         <div class="row">
@@ -142,7 +142,7 @@ require_once('../connection.php');
                 $query = "SELECT * FROM `bags` WHERE id=$bags_index[$i]";
                 $select = mysqli_query($connection, $query);
                 $recodes = mysqli_fetch_assoc($select);
-                $bag = "../images/bags/$bags_index[$i].0.png";
+                $bag = "images/bags/$bags_index[$i].0.png";
 
                 $id=$bags_index[$i];
                 $catagery = "bags";
@@ -151,7 +151,7 @@ require_once('../connection.php');
                 <div class="col-4">
                     <a id='url' href="<?php echo $url;?>">
                         <div>
-                            <center><img src=<?php echo $bag ?> alt="bag" style="width:300px;height:300px"></center>
+                            <center><img src=<?php echo $bag ?> alt="bag" style="width:85%"></center>
                         </div>
                     </a>
                     <div>
@@ -169,9 +169,9 @@ require_once('../connection.php');
         <h1>
             <center>Toys Section</center>
         </h1>
-        <img src="../images/toys.png" style="width:100%;"><br><br><br>
+        <img src="images/toys.png" style="width:100%;"><br><br><br>
         <h3>
-            <center><a id='view-all' href="../section/toys-section.php">View All</a></center>
+            <center><a id='view-all' href="toys-section.php">View All</a></center>
         </h3><br><br>
 
         <div class="row">
@@ -182,7 +182,7 @@ require_once('../connection.php');
                 $query = "SELECT * FROM `toys` WHERE id=$toys_index[$i]";
                 $select = mysqli_query($connection, $query);
                 $recodes = mysqli_fetch_assoc($select);
-                $toy = "../images/toys/$toys_index[$i].0.png";
+                $toy = "images/toys/$toys_index[$i].0.png";
 
                 $id=$toys_index[$i];
                 $catagery = "toys";
@@ -191,7 +191,7 @@ require_once('../connection.php');
                 <div class="col-4">
                     <a id='url' href="<?php echo $url;?>">
                         <div>
-                            <center><img src=<?php echo $toy ?> alt="toy" style="width:300px;height:300px"></center>
+                            <center><img src=<?php echo $toy ?> alt="toy" style="width:85%"></center>
                         </div>
                     </a>
                     <div>
@@ -206,9 +206,9 @@ require_once('../connection.php');
             <?php } ?>
         </div>
 
-        <?php include '../before_footer.php'; ?>
+        <?php include 'before_footer.php'; ?>
         <!--include footer for home page-->
-        <?php include '../footer.php'; ?>
+        <?php include 'footer.php'; ?>
     </div>
 </body>
 
