@@ -2,6 +2,10 @@
 //connect with database
 require_once('connection.php');
 ?>
+<?php
+// Start the session
+session_start();
+?>
 <!DOCTYPE html>
 <html>
 
@@ -62,7 +66,7 @@ require_once('connection.php');
                 $password = md5($password);
                 $client = "INSERT INTO client (email,password) VALUES ('$email','$password')";
                 mysqli_query($connection, $client);
-                header("Location: ./connection.php?sighup=success");
+                header("Location: ./index.php?sighup=success");
             }
         }
         ?>

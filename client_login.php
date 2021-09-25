@@ -2,6 +2,10 @@
 //connect with database
 require_once('connection.php');
 ?>
+<?php
+// Start the session
+session_start();
+?>
 <!--start session-->
 <?php session_start(); ?>
 <!DOCTYPE html>
