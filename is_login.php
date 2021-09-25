@@ -1,13 +1,11 @@
 <?php
-//connect with database
-require_once('connection.php');
-?>
-<?php
 // Start the session
-session_start();
+/*session_start();
 if(isset($_SESSION["email"])){
-    
-}
+    $_SESSION["is_logged"] = true;
+    }else{
+    $_SESSION["is_logged"] = false;
+    }*/
 ?>
 <!DOCTYPE html>
 <html>
@@ -25,5 +23,3 @@ if(isset($_SESSION["email"])){
 </body>
 
 </html>
-<!--end connection with database-->
-<?php mysqli_close($connection); ?>

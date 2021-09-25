@@ -1,3 +1,5 @@
+<!--start session-->
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html>
 
@@ -15,9 +17,10 @@
 <body>
     <div class="container-fluid">
         <!--include home page-->
-        <?php include 'home.php'; ?>
+        <?php header("Location: ./home.php");?>
         
     </div>
 </body>
 
 </html>
+<?php session_destroy(); ?>

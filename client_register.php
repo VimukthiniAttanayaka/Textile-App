@@ -2,10 +2,8 @@
 //connect with database
 require_once('connection.php');
 ?>
-<?php
-// Start the session
-session_start();
-?>
+<!--start session-->
+<?php session_start(); ?> 
 <!DOCTYPE html>
 <html>
 
@@ -66,7 +64,8 @@ session_start();
                 $password = md5($password);
                 $client = "INSERT INTO client (email,password) VALUES ('$email','$password')";
                 mysqli_query($connection, $client);
-                header("Location: ./index.php?sighup=success");
+                $_SESSION["email"] = $email;
+                echo '<script>window.location = "home.php";</script>';
             }
         }
         ?>

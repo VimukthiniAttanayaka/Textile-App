@@ -2,10 +2,6 @@
 //connect with database
 require_once('connection.php');
 ?>
-<?php
-// Start the session
-session_start();
-?>
 <!--start session-->
 <?php session_start(); ?>
 <!DOCTYPE html>
@@ -63,7 +59,7 @@ session_start();
                 if ($recodes && $password == $recodes['password']) {
                     //checking password matching or not
                     $_SESSION["email"] = $email;
-                    header("Location: connection.php?");
+                    echo '<script>window.location = "home.php";</script>';
                 } else {
                     $error = "Check your e-mail and Password again";
                 }

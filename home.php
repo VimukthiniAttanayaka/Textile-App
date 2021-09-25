@@ -47,7 +47,7 @@ require_once('connection.php');
         <div class="row">
 
             <?php
-            $cloths_index = array("1", "2", "5", "7", "8", "9");
+            $cloths_index = array("1", "2", "5", "7", "13", "9");
             for ($i = 0; $i < count($cloths_index); $i++) {
                 $query = "SELECT * FROM `cloths` WHERE id=$cloths_index[$i]";
                 $select = mysqli_query($connection, $query);

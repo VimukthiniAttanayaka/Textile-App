@@ -62,7 +62,7 @@ require_once('connection.php');
         
         ?>
         <center>
-            <a id='back_to_shopping' href="./index.php">
+            <a id='back_to_shopping' href="./home.php">
                 <button class="btn btn-info">
                     <h2>Back To Shopping</h2>
                 </button>
