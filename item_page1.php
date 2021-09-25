@@ -16,10 +16,33 @@ require_once('connection.php');
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" 
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" 
     crossorigin="anonymous"></script>
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
     <title>Item Page</title>
     <style>
         #item_detail {
             padding-top: 75px;
+        }
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+        }
+        input[type=number] {
+        -moz-appearance: textfield;
+        width: 50px;
+        text-align: center;
+        }
+        .plus{
+            background-image: url("images/up.png");
+            background-size: 100%;
+            width: 30px;
+            border: none;
+        }
+        .minus{
+            background-image: url("images/down.png");
+            background-size: 100%;
+            width: 30px;
+            border: none;
         }
     </style>
 </head>
@@ -206,14 +229,19 @@ require_once('connection.php');
                         <?php } ?>
                     </p>
                     <?php } ?>
+                    <form>
                     <p id='label'><label for="quentity">Quentity: </label>
-                        <input type="number" min="1" name="quentity" placeholder="">
+                        <input class="plus" onclick="quentity.value++">
+                        <input type="number" min="1" name="quentity" placeholder=1 value="1">
+                        <input class="minus" onclick="quentity.value--">
                     <p>
+                        <div>
                         <center>
                             <button class="btn btn-primary" type="submit" name="submit" style="width: 250px;">
                                 Add To Cart
                             </button>
                         </center>
+                        </div>
                 </form>
                 <div>
                     <br><?php echo $recodes['discription']; ?>

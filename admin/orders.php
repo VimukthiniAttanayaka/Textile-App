@@ -21,9 +21,13 @@ require_once('../connection.php');
 <body>
     <div class="container-fluid">
         <div class="row">
-        <?php include 'listing.php'; ?>
+        <a id='url' href="overview.php">Overview</a>
+        <a id='url' href="listing.php">Listings</a>
+        <a id='url' href="orders.php">Orders</a> 
         </div>
     </div>
 </body>
 
 </html>
+<!--end connection with database-->
+<?php mysqli_close($connection); ?>
