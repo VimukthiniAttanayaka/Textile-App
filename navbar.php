@@ -1,3 +1,7 @@
+<?php
+session_start();
+require_once './cart/phpOperations/cartQty.php';
+?>
 <!DOCTYPE html>
 <html>
 
@@ -49,11 +53,20 @@
       </div>
       <div class="col-1">
         <!-- Button trigger modal -->
-        <div class="row">
-          <i class='fas fa-shopping-cart' style='font-size:36px'></i>
+        <div class="row"><a href="./cart/cartMain.php" class="link-success">
+                <i class='fas fa-shopping-cart' style='font-size:36px'></i></a>
         </div>
-        <div class="row">
-          <p><button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Your Cart</button></p>
+            <div class="row">
+          <p><button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Your Cart</button>
+              <span class="p-1 mb-1 bg-warning text-dark" >
+            <?php
+            if(isset($_SESSION['email'])){
+                print_r($_SESSION['cartQty']);
+            }else{
+                echo '0';
+            }
+            ?>
+            </span></p>
         </div>
       </div>
       <div class="col-1">
@@ -85,6 +98,7 @@
   </div>
 </div>
 </div>
+
 </body>
 
 </html>

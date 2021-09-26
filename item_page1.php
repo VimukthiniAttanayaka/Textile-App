@@ -1,9 +1,12 @@
 <?php
+//session_start();
 //connect with database
+
 require_once('connection.php');
+
 ?>
 <!--start session-->
-<?php session_start(); 
+<?php
 if(isset($_SESSION["email"])){
     $_SESSION["is_logged"] = true;
     }else{
@@ -78,6 +81,7 @@ if(isset($_SESSION["email"])){
         } else if($catagery=='toys'){
             $query = "SELECT * FROM `toys` WHERE id=$id";
         }
+        $connection =new mysqli('localhost','root','','shopping');
         $select = mysqli_query($connection, $query);
         $recodes = mysqli_fetch_assoc($select); ?>
         
