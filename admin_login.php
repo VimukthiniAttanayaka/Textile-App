@@ -35,7 +35,7 @@ require_once('connection.php');
                     if ($recodes && $password == $recodes['password']) {
                         //checking password matching or not
                         $_SESSION["email"] = $email;
-                        header("Location: connection.php?");
+                        header("Location: ./admin/index.php?");
                     } else {
                         $error = "Check your e-mail and Password again";
                     }
