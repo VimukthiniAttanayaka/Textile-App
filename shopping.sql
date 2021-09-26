@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Sep 25, 2021 at 09:41 AM
+-- Generation Time: Sep 26, 2021 at 11:37 AM
 -- Server version: 8.0.21
 -- PHP Version: 7.3.21
 
@@ -78,20 +78,25 @@ CREATE TABLE IF NOT EXISTS `cart` (
   `name` varchar(100) NOT NULL,
   `price` double NOT NULL,
   `size` int NOT NULL,
+  `men_women_kid` int NOT NULL,
   `quentity` int NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `cart`
 --
 
-INSERT INTO `cart` (`id`, `product_id`, `catagory`, `name`, `price`, `size`, `quentity`) VALUES
-(1, 1, 'cloths', 'Checked Lounge Set', 2499.99, 37, 0),
-(2, 2, 'cloths', 'Heathered Pyjamas with Elasticated Waist', 2999.99, 37, 0),
-(3, 5, 'cloths', 'Slim Fit Shirt with Patch Pocket', 1699.99, 37, 0),
-(4, 3, 'shoes', 'Marathon Skin Black', 5499.99, 37, 0),
-(5, 7, 'cloths', 'Ankle Length Slim Fit Cargo Pants', 4999.99, 37, 0);
+INSERT INTO `cart` (`id`, `product_id`, `catagory`, `name`, `price`, `size`, `men_women_kid`, `quentity`) VALUES
+(1, 1, 'cloths', 'Checked Lounge Set', 2499.99, 37, 1, 1),
+(2, 2, 'cloths', 'Heathered Pyjamas with Elasticated Waist', 2999.99, 37, 1, 1),
+(3, 9, 'cloths', 'Slim Fit Pleat-Front Pants', 1999.99, 37, 2, 1),
+(4, 13, 'cloths', 'Satin Woven Top & Pyjamas Set', 674, 37, 3, 1),
+(5, 5, 'shoes', 'Marathon Nebula Dark Grey', 4999.99, 37, 1, 1),
+(6, 9, 'shoes', 'Pointed-Toe Ballerinas', 1399.99, 37, 2, 1),
+(7, 3, 'bags', 'Unisex Sea Green Solid Backpack', 4599.99, 0, 0, 1),
+(8, 5, 'toys', 'Tiny Tukkins Playset', 999.99, 0, 0, 1),
+(9, 3, 'toys', 'Beadery Wonder Loom Kit', 1499.99, 0, 0, 1);
 
 -- --------------------------------------------------------
 
@@ -105,7 +110,14 @@ CREATE TABLE IF NOT EXISTS `client` (
   `email` varchar(100) NOT NULL,
   `password` varchar(40) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `client`
+--
+
+INSERT INTO `client` (`id`, `email`, `password`) VALUES
+(1, 'cat@gmail.com', 'd077f244def8a70e5ea758bd8352fcd8');
 
 -- --------------------------------------------------------
 
