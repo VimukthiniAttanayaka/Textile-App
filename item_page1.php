@@ -23,40 +23,8 @@ if(isset($_SESSION["email"])){
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" 
     crossorigin="anonymous"></script>
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <link rel="stylesheet" href="./styles/item_list.css">
     <title>Item Page</title>
-    <style>
-        #item_detail {
-            padding-top: 75px;
-        }
-        input::-webkit-outer-spin-button,
-        input::-webkit-inner-spin-button {
-        -webkit-appearance: none;
-        margin: 0;
-        }
-        input[type=number] {
-        -moz-appearance: textfield;
-        width: 50px;
-        text-align: center;
-        }
-        .plus{
-            background-image: url("images/up.png");
-            background-size: 95%;
-            width: 30px;
-            border: none;
-        }
-        .plus:hover{
-            cursor: pointer;
-        }
-        .minus{
-            background-image: url("images/down.png");
-            background-size: 95%;
-            width: 30px;
-            border: none;
-        }
-        .minus:hover{
-            cursor: pointer;
-        }
-    </style>
 </head>
 
 <body>
@@ -82,34 +50,33 @@ if(isset($_SESSION["email"])){
         $recodes = mysqli_fetch_assoc($select); ?>
         
         <div class="row">
-            <div class="col-8">
+            <div class="col-8" id="item_img">
                 <?php if($catagery=='shoes'||$catagery=='cloths'){?>
                     <?php if ($recodes['men_women_kid'] == 1) { ?>
                         <div class="row">
                             <center>
                                 <img id="image" 
                                     src="images/<?php echo $catagery ?>/men/<?php echo $recodes['id']; ?>.0.png" 
-                                    alt="cloth" 
-                                    style="width:500px;height:500px">
+                                    alt="cloth">
                             </center>
                         </div>
                         <div class="row">
                             <div class="col-2">
                                 <button 
-                                onclick="document.getElementById('image').src='images/<?php echo $catagery ?>/men/<?php echo $recodes['id']; ?>.0.png'" style="border:none">
-                                    <img src='images/<?php echo $catagery ?>/men/<?php echo $recodes['id']; ?>.0.png' style="width:100px;height:100px">
+                                onclick="document.getElementById('image').src='images/<?php echo $catagery ?>/men/<?php echo $recodes['id']; ?>.0.png'" id="img-btn">
+                                    <img src='images/<?php echo $catagery ?>/men/<?php echo $recodes['id']; ?>.0.png' id="img-sm">
                                 </button>
                             </div>
                             <div class="col-2">
                                 <button 
-                                onclick="document.getElementById('image').src='images/<?php echo $catagery ?>/men/<?php echo $recodes['id']; ?>.1.png'"style="border:none">
-                                    <img src='images/<?php echo $catagery ?>/men/<?php echo $recodes['id']; ?>.1.png' style="width:100px;height:100px">
+                                onclick="document.getElementById('image').src='images/<?php echo $catagery ?>/men/<?php echo $recodes['id']; ?>.1.png'"id="img-btn">
+                                    <img src='images/<?php echo $catagery ?>/men/<?php echo $recodes['id']; ?>.1.png' id="img-sm">
                                 </button>
                             </div>
                             <div class="col-2">
                                 <button 
-                                onclick="document.getElementById('image').src='images/<?php echo $catagery ?>/men/<?php echo $recodes['id']; ?>.2.png'"style="border:none">
-                                    <img src='images/<?php echo $catagery ?>/men/<?php echo $recodes['id']; ?>.2.png' style="width:100px;height:100px">
+                                onclick="document.getElementById('image').src='images/<?php echo $catagery ?>/men/<?php echo $recodes['id']; ?>.2.png'"id="img-btn">
+                                    <img src='images/<?php echo $catagery ?>/men/<?php echo $recodes['id']; ?>.2.png' id="img-sm">
                                 </button>
                             </div>
                         </div>
@@ -125,20 +92,20 @@ if(isset($_SESSION["email"])){
                         <div class="row">
                             <div class="col-2">
                                 <button 
-                                onclick="document.getElementById('image').src='images/<?php echo $catagery ?>/women/<?php echo $recodes['id']; ?>.0.png'"style="border:none">
-                                    <img src='images/<?php echo $catagery ?>/women/<?php echo $recodes['id']; ?>.0.png' style="width:100px;height:100px">
+                                onclick="document.getElementById('image').src='images/<?php echo $catagery ?>/women/<?php echo $recodes['id']; ?>.0.png'"id="img-btn">
+                                    <img src='images/<?php echo $catagery ?>/women/<?php echo $recodes['id']; ?>.0.png' id="img-sm">
                                 </button>   
                             </div>
                             <div class="col-2">
                                 <button 
-                                onclick="document.getElementById('image').src='images/<?php echo $catagery ?>/women/<?php echo $recodes['id']; ?>.1.png'"style="border:none">
-                                    <img src='images/<?php echo $catagery ?>/women/<?php echo $recodes['id']; ?>.1.png' style="width:100px;height:100px">
+                                onclick="document.getElementById('image').src='images/<?php echo $catagery ?>/women/<?php echo $recodes['id']; ?>.1.png'"id="img-btn">
+                                    <img src='images/<?php echo $catagery ?>/women/<?php echo $recodes['id']; ?>.1.png' id="img-sm">
                                 </button>
                             </div>
                             <div class="col-2">
                                 <button 
-                                onclick="document.getElementById('image').src='images/<?php echo $catagery ?>/women/<?php echo $recodes['id']; ?>.2.png'"style="border:none">
-                                    <img src='images/<?php echo $catagery ?>/women/<?php echo $recodes['id']; ?>.2.png' style="width:100px;height:100px">
+                                onclick="document.getElementById('image').src='images/<?php echo $catagery ?>/women/<?php echo $recodes['id']; ?>.2.png'"id="img-btn">
+                                    <img src='images/<?php echo $catagery ?>/women/<?php echo $recodes['id']; ?>.2.png' id="img-sm">
                                 </button>
                             </div>
                         </div>
@@ -154,20 +121,20 @@ if(isset($_SESSION["email"])){
                         <div class="row">
                             <div class="col-2">
                                 <button 
-                                onclick="document.getElementById('image').src='images/<?php echo $catagery ?>/kid/<?php echo $recodes['id']; ?>.0.png'"style="border:none">
-                                    <img src='images/<?php echo $catagery ?>/kid/<?php echo $recodes['id']; ?>.0.png' style="width:100px;height:100px">
+                                onclick="document.getElementById('image').src='images/<?php echo $catagery ?>/kid/<?php echo $recodes['id']; ?>.0.png'"id="img-btn">
+                                    <img src='images/<?php echo $catagery ?>/kid/<?php echo $recodes['id']; ?>.0.png' id="img-sm">
                                 </button>
                             </div>
                             <div class="col-2">
                                 <button 
-                                onclick="document.getElementById('image').src='images/<?php echo $catagery ?>/kid/<?php echo $recodes['id']; ?>.1.png'"style="border:none">
-                                    <img src='images/<?php echo $catagery ?>/kid/<?php echo $recodes['id']; ?>.1.png' style="width:100px;height:100px">
+                                onclick="document.getElementById('image').src='images/<?php echo $catagery ?>/kid/<?php echo $recodes['id']; ?>.1.png'"id="img-btn">
+                                    <img src='images/<?php echo $catagery ?>/kid/<?php echo $recodes['id']; ?>.1.png' id="img-sm">
                                 </button>
                             </div>
                             <div class="col-2">
                                 <button 
-                                onclick="document.getElementById('image').src='images/<?php echo $catagery ?>/kid/<?php echo $recodes['id']; ?>.2.png'"style="border:none">
-                                    <img src='images/<?php echo $catagery ?>/kid/<?php echo $recodes['id']; ?>.2.png' style="width:100px;height:100px">
+                                onclick="document.getElementById('image').src='images/<?php echo $catagery ?>/kid/<?php echo $recodes['id']; ?>.2.png'"id="img-btn">
+                                    <img src='images/<?php echo $catagery ?>/kid/<?php echo $recodes['id']; ?>.2.png' id="img-sm">
                                 </button>
                             </div>
                         </div>
@@ -184,20 +151,20 @@ if(isset($_SESSION["email"])){
                     <div class="row">
                         <div class="col-2">
                             <button 
-                            onclick="document.getElementById('image').src='images/<?php echo $catagery ?>/<?php echo $recodes['id']; ?>.0.png'"style="border:none">
-                                <img src='images/<?php echo $catagery ?>/<?php echo $recodes['id']; ?>.0.png' style="width:100px;height:100px">
+                            onclick="document.getElementById('image').src='images/<?php echo $catagery ?>/<?php echo $recodes['id']; ?>.0.png'"id="img-btn">
+                                <img src='images/<?php echo $catagery ?>/<?php echo $recodes['id']; ?>.0.png' id="img-sm">
                             </button>
                         </div>
                         <div class="col-2">
                             <button 
-                            onclick="document.getElementById('image').src='images/<?php echo $catagery ?>/<?php echo $recodes['id']; ?>.1.png'"style="border:none">
-                                <img src='images/<?php echo $catagery ?>/<?php echo $recodes['id']; ?>.1.png' style="width:100px;height:100px">
+                            onclick="document.getElementById('image').src='images/<?php echo $catagery ?>/<?php echo $recodes['id']; ?>.1.png'"id="img-btn">
+                                <img src='images/<?php echo $catagery ?>/<?php echo $recodes['id']; ?>.1.png' id="img-sm">
                             </button>
                         </div>
                         <div class="col-2">
                             <button 
-                            onclick="document.getElementById('image').src='images/<?php echo $catagery ?>/<?php echo $recodes['id']; ?>.2.png'"style="border:none">
-                                <img src='images/<?php echo $catagery ?>/<?php echo $recodes['id']; ?>.2.png' style="width:100px;height:100px">
+                            onclick="document.getElementById('image').src='images/<?php echo $catagery ?>/<?php echo $recodes['id']; ?>.2.png'"id="img-btn">
+                                <img src='images/<?php echo $catagery ?>/<?php echo $recodes['id']; ?>.2.png' id="img-sm">
                             </button>
                         </div>
                     </div>
@@ -205,8 +172,8 @@ if(isset($_SESSION["email"])){
             </div>
 
             <div class="col-4" id="item_detail">
-                <h3><?php echo $recodes['name']; ?></h3>
-                <h5>Rs.<?php echo $recodes['price']; ?></h5>
+                <h3 id="name"><?php echo $recodes['name']; ?></h3>
+                <h5 id="name">Rs.<?php echo $recodes['price']; ?></h5>
 
                 <?php $url="add_cart.php?id={$id}& catagery={$catagery}";?>
 
@@ -249,13 +216,13 @@ if(isset($_SESSION["email"])){
                         <div>
                         <?php if ($_SESSION["is_logged"] == true): ?>
                         <center>
-                            <button class="btn btn-primary" type="submit" name="submit" style="width: 250px;">
+                            <button class="btn btn-primary" type="submit" name="submit">
                                 Add To Cart
                             </button>
                         </center>
                         <?php else: ?>
                             <center>
-                            <button class="btn btn-primary" disabled style="width: 250px;">
+                            <button class="btn btn-primary" disabled>
                                 Add To Cart
                             </button>
                             </center>

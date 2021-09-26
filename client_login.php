@@ -12,30 +12,8 @@ require_once('connection.php');
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./styles/login.css">
     <title>LogIn-page</title>
-    <style>
-        .container-fluid {
-            padding: 0px !important;
-            margin: 0px !important;
-        }
-
-        body {
-            background-image: url("images/login-background.jpg");
-            background-repeat: no-repeat;
-            background-size: 100%;
-        }
-
-        .row-lg {
-            width: 250px;
-            align-self: center;
-            margin-top: 2%;
-            margin-left: 70%;
-            padding-bottom: 5%;
-            padding-left: 1%;
-            background-color: white;
-            opacity: 0.755;
-        }
-    </style>
 </head>
 
 <body>

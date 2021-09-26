@@ -9,25 +9,9 @@ require_once('connection.php');
     <meta charset="UTF-8">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./styles/home.css">
     <title>Home</title>
-    <style>
-        .container-fluid {
-            padding: 0px !important;
-            margin: 0px !important;
-        }
-
-        h1 {
-            color: darkblue;
-            font-size: 500%;
-        }
-
-        #view-all {
-            text-decoration: none;
-            color: white;
-            background-color: black;
-            padding: 10px;
-        }
-    </style>
 </head>
 
 <body>
@@ -36,14 +20,15 @@ require_once('connection.php');
         <?php include 'navbar.php'; ?>
         <!--home page image-->
         <img src="images/home.jpg" alt="home" style="width:100%;">
+        <hr>
         <!--cloths section-->
         <h1>
             <center>Cloths Section</center>
         </h1>
-        <img src="images/cloths.png" style="width:100%;"><br><br><br>
+        <img src="images/cloths.png" style="width:100%;"><br><br>
         <h3>
             <center><a id='view-all' href="cloths-section.php">View All</a></center>
-        </h3><br><br>
+        </h3><br>
         <div class="row">
 
             <?php
@@ -63,7 +48,7 @@ require_once('connection.php');
                 $catagery = "cloths";
                 $url="item_page1.php?id={$id} & catagery={$catagery}";
             ?>
-                <div class="col-4">
+                <div class="col-md-4 col-sm-6 col-xs-6">
                     <a id='url' href="<?php echo $url;?>">
                         <div>
                             <center><img src=<?php echo $cloth ?> alt="cloth" style="width:80%"></center>
@@ -80,6 +65,7 @@ require_once('connection.php');
                 </div>
             <?php } ?>
         </div>
+        <hr>
         <!--shoes section-->
         <h1>
             <center>Shoes Section</center>
@@ -108,7 +94,7 @@ require_once('connection.php');
                 $catagery = "shoes";
                 $url="item_page1.php?id={$id}& catagery={$catagery}";
             ?>
-                <div class="col-4">
+                <div class="col-md-4 col-sm-6 col-xs-6">
                     <a id='url' href="<?php echo $url;?>">
                         <div>
                             <center><img src=<?php echo $shoe ?> alt="cloth" style="width:85%"></center>
@@ -125,6 +111,7 @@ require_once('connection.php');
                 </div>
             <?php } ?>
         </div>
+        <hr>
         <!--bags section-->
         <h1>
             <center>Bags Section</center>
@@ -137,7 +124,7 @@ require_once('connection.php');
         <div class="row">
 
             <?php
-            $bags_index = array("5", "3", "4", "7", "8", "9");
+            $bags_index = array("5", "3", "4");
             for ($i = 0; $i < count($bags_index); $i++) {
                 $query = "SELECT * FROM `bags` WHERE id=$bags_index[$i]";
                 $select = mysqli_query($connection, $query);
@@ -148,7 +135,7 @@ require_once('connection.php');
                 $catagery = "bags";
                 $url="item_page1.php?id={$id} & catagery={$catagery}";
             ?>
-                <div class="col-4">
+                <div class="col-md-4 col-sm-6 col-xs-6">
                     <a id='url' href="<?php echo $url;?>">
                         <div>
                             <center><img src=<?php echo $bag ?> alt="bag" style="width:85%"></center>
@@ -165,6 +152,7 @@ require_once('connection.php');
                 </div>
             <?php } ?>
         </div>
+        <hr>
         <!--toys section-->
         <h1>
             <center>Toys Section</center>
@@ -177,7 +165,7 @@ require_once('connection.php');
         <div class="row">
 
             <?php
-            $toys_index = array("5", "3", "4", "7", "8", "9");
+            $toys_index = array("5", "3", "4");
             for ($i = 0; $i < count($toys_index); $i++) {
                 $query = "SELECT * FROM `toys` WHERE id=$toys_index[$i]";
                 $select = mysqli_query($connection, $query);
@@ -188,7 +176,7 @@ require_once('connection.php');
                 $catagery = "toys";
                 $url="item_page1.php?id={$id} & catagery={$catagery}";
             ?>
-                <div class="col-4">
+                <div class="col-md-4 col-sm-6 col-xs-6">
                     <a id='url' href="<?php echo $url;?>">
                         <div>
                             <center><img src=<?php echo $toy ?> alt="toy" style="width:85%"></center>

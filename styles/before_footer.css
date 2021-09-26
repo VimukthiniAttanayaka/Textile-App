@@ -1,0 +1,19 @@
+#before-footer{
+    background-color: blue;
+}
+#text{
+    color: white;
+    font-size: 60px;
+}
+@media (max-width: 950px){
+    #text{
+        color: white;
+        font-size: 40px;
+    }
+}
+@media (max-width: 600px){
+    #text{
+        color: white;
+        font-size: 20px;
+    }
+}

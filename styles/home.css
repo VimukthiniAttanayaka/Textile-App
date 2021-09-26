@@ -1,0 +1,32 @@
+.container-fluid {
+    padding: 0px !important;
+    margin: 0px !important;
+}
+
+h1 {
+    color: darkblue;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 500%;
+}
+
+#view-all {
+    text-decoration: none;
+    color: white;
+    background-color: black;
+    padding: 10px;
+}
+
+@media (max-width: 768px){
+    #view-all {
+        text-decoration: none;
+        color: white;
+        background-color: black;
+        padding: 2px;
+    }
+}
+@media (max-width: 480px){
+    #item{
+        padding: auto;
+        width:110%;
+    }
+}

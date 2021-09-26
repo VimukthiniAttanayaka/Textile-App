@@ -9,25 +9,8 @@ require_once('connection.php');
     <meta charset="UTF-8">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="./styles/section.css">
     <title>Kids Section</title>
-    <style>
-        .container-fluid {
-            padding: 0px !important;
-            margin: 0px !important;
-        }
-
-        h1 {
-            color: darkblue;
-            font-size: 500%;
-        }
-
-        #view-all {
-            text-decoration: none;
-            color: black;
-            border: 5px solid darkblue;
-            border-radius: 15px;
-        }
-    </style>
 </head>
 
 <body>
@@ -52,7 +35,7 @@ require_once('connection.php');
                     $url="item_page1.php?id={$id} & catagery={$catagery}";
                 ?> 
 
-                <div class="col-4">
+                <div class="col-md-4 col-sm-6 col-xs-6">
                     <a id='url' href="<?php echo $url;?>">
                         <div>
                             <center><img src=<?php echo $cloth ?> alt="cloth" style="width:80%"></center>

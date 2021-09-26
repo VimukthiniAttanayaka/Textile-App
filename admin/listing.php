@@ -10,24 +10,8 @@ require_once('../connection.php');
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../styles/listing.css">
     <title>Item List</title>
-    <style>
-        .container-fluid {
-            padding: 20px !important;
-            margin: 0px !important;
-        }
-        #addnew{
-            width: 400px;
-        }
-        #btn{
-            padding: 10px;
-            border: none;
-            width: 100px;
-            background-color: white;
-            font-size: 150%;
-            color: blue;
-        }
-    </style>
 </head>
 
 <body>

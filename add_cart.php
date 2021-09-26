@@ -28,6 +28,10 @@ require_once('connection.php');
         $product_id = $recodes1['id'];
         $name = $recodes1['name'];
         $price = $recodes1['price'];
+        if($catagery=="cloths" or $catagery=="shoes"){
+            $men_women_kid=$recodes1['men_women_kid'];
+            echo $men_women_kid;
+        }
 
         $quentity = $_REQUEST['quentity'];
         if($catagery=='shoes'||$catagery=='cloths'){
@@ -55,9 +59,15 @@ require_once('connection.php');
         }
         
         if($insert===1){
+            if($catagery=="cloths" or $catagery=="shoes"){
+                $cart = "INSERT INTO cart (product_id,catagory,name,price,size,men_women_kid,quentity) 
+                VALUES ('$product_id','$catagery','$name','$price','$size','$men_women_kid','$quentity' )";
+                mysqli_query($connection, $cart);
+            } else {
             $cart = "INSERT INTO cart (product_id,catagory,name,price,size,quentity) 
             VALUES ('$product_id','$catagery','$name','$price','$size','$quentity' )";
             mysqli_query($connection, $cart);
+            }
         }
         
         ?>

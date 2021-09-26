@@ -9,15 +9,8 @@
   <meta name='viewport' content='width=device-width, initial-scale=1'>
   <!--icon -->
   <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+  <link rel="stylesheet" href="./styles/navbar.css">
   <title>navbar</title>
-  <style>
-        #nav-url{
-          color: black;
-        }
-        .col-5-lg{
-          padding-left: 10%;
-        }
-    </style>
 </head>
 
 <body>
@@ -26,7 +19,7 @@
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="col-5-lg col-2-md col-0-sm">
+      <div class="col-5-lg col-2-md col-1-sm">
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
@@ -44,20 +37,20 @@
           </ul>
         </div>
       </div>
-      <div class="col-4">
-        <img src="images/logo.png" alt="home" style="width:250px;">
+      <div class="col-4-lg col-4-md">
+        <img src="images/logo.png" alt="home" id="logo">
       </div>
-      <div class="col-1">
+      <div class="col-1-lg col-2-sm">
         <!-- Button trigger modal -->
-        <div class="row">
+        <div id="icon" class="row">
           <i class='fas fa-shopping-cart' style='font-size:36px'></i>
         </div>
         <div class="row">
-          <p><button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Your Cart</button></p>
+          <p><button id='nav-url' type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Your Cart</button></p>
         </div>
       </div>
-      <div class="col-1">
-        <div class="row" style="vertical-align: middle;">
+      <div class="col-1-lg col-2-sm">
+        <div class="row" id="icon">
           <i class='fas fa-user-circle' style='font-size:36px;vertical-align: middle;'></i>
         </div>
         <div class="row">
@@ -67,24 +60,23 @@
     </div>
   </nav>
   <!-- Modal -->
-<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Understood</button>
+  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">Your Cart</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <?php include 'cart-modal.php'; ?>
+        </div>
+        <div class="modal-footer">
+          <a href="cart.php"><button type="button" class="btn btn-primary">View Cart</button></a>
+        </div>
       </div>
     </div>
   </div>
-</div>
-</div>
+  </div>
 </body>
 
 </html>

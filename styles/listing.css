@@ -1,0 +1,15 @@
+.container-fluid {
+    padding: 20px !important;
+    margin: 0px !important;
+}
+#addnew{
+    width: 400px;
+}
+#btn{
+    padding: 10px;
+    border: none;
+    width: 100px;
+    background-color: white;
+    font-size: 150%;
+    color: blue;
+}

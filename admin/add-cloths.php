@@ -9,29 +9,8 @@ require_once('../connection.php');
     <meta charset="UTF-8">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="../styles/add-item.css">
     <title>add cloths</title>
-    <style>
-        .container-fluid {
-            padding: 0px !important;
-            margin: 0px !important;
-        }
-        body{
-            background-image: url("../images/login-background.jpg");
-            background-repeat: no-repeat;
-            background-size: 100%;
-        }
-        .row-lg{
-            width: 250px;
-            align-self: center;
-            margin-top: 2%;
-            margin-left: 70%;
-            justify-content: center;
-            padding-left: 1%;
-            background-color: white;
-            opacity: 0.755;
-            padding-bottom: 10px;
-        }
-    </style>
 </head>
 
 <body>
