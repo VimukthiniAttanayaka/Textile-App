@@ -25,7 +25,12 @@
             </div>
         </div><br>
         <?php 
-            $query2 = "SELECT * FROM cart";
+            if (isset($_SESSION["email"])) {
+                $email=$_SESSION["email"];
+            } else {
+                $email="";
+            }
+            $query2 = "SELECT * FROM cart WHERE user_email='$email'";
             $select2 = mysqli_query($connection, $query2);
             while ($recodes2 = mysqli_fetch_assoc($select2)) {
             $id = $recodes2['product_id'];
