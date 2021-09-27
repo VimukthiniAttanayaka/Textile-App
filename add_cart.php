@@ -69,7 +69,7 @@ require_once('connection.php');
             mysqli_query($connection, $cart);
             }
         }
-            header("Location: cart.php?");
+            header("Location: ./cart/cartMain.php?");
         ?>
     </div>
 </body>

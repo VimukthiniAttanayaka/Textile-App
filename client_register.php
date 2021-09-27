@@ -1,9 +1,7 @@
 <?php
 //connect with database
 require_once('connection.php');
-?>
-<!--start session-->
-<?php session_start(); ?> 
+?> 
 <!DOCTYPE html>
 <html>
 

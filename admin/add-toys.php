@@ -103,7 +103,7 @@ require_once('../connection.php');
                         <div class="col"><?php if ($update == true): ?>
                             <button class="btn" type="submit" name="update" style="background: #556B2F;" >update</button>
                         <?php else: ?>
-                            <button class="btn" type="submit" name="submit" >Add</button>
+                            <button class="btn btn-primary" type="submit" name="submit" >Add</button>
                         <?php endif ?></div>
                     </div>
                 </div>

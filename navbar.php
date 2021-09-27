@@ -1,3 +1,7 @@
+<?php
+session_start();
+require_once './cart/phpOperations/cartQty.php';
+?>
 <!DOCTYPE html>
 <html>
 
@@ -14,6 +18,14 @@
 </head>
 
 <body>
+
+  <?php
+  if (isset($_SESSION['email'])) {
+    $cart_item = ($_SESSION['cartQty']);
+  } else {
+    $cart_item = 0;
+  }
+  ?>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -42,16 +54,19 @@
       </div>
       <div class="col-1-lg col-2-sm">
         <!-- Button trigger modal -->
-        <div id="icon" class="row">
-          <i class='fas fa-shopping-cart' style='font-size:36px'></i>
+        <div id="icon" class="col">
+          <span><i class='fas fa-shopping-cart' id="cart-icon"></i></span>
+          <span class="cart_no">
+            <?php echo $cart_item ?>
+          </span>
         </div>
         <div class="row">
-          <p><button id='nav-url' type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Your Cart</button></p>
+          <p><button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Your Cart</button>
         </div>
       </div>
       <div class="col-1-lg col-2-sm">
         <div class="row" id="icon">
-          <i class='fas fa-user-circle' style='font-size:36px;vertical-align: middle;'></i>
+          <i class='fas fa-user-circle' id="login-icon"></i>
         </div>
         <div class="row">
           <p><a id='nav-url' href="client_register.php">SignUp</a> / <a id='nav-url' href="client_login.php">LogIn</a></p>
@@ -68,10 +83,10 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-            <?php include 'cart-modal.php'; ?>
+          <?php include 'cart-modal.php'; ?>
         </div>
         <div class="modal-footer">
-          <a href="cart.php"><button type="button" class="btn btn-primary">View Cart</button></a>
+          <a href="./cart/cartMain.php" class="link-success"><button type="button" class="btn btn-primary">View Cart</button></a>
         </div>
       </div>
     </div>
