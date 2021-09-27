@@ -1,4 +1,5 @@
 <?php
+//start session
 session_start();
 //connect with database
 require_once('connection.php');
@@ -16,24 +17,14 @@ require_once('connection.php');
 
 <body>
     <div class="container-fluid">
+        <!--adding data for cart-->
     <?php
+        //getting value and store in variables
         $email=$_SESSION["email"];
         $id= $_GET['id'];
+	$id= str_replace(" ","",$id);
         $catagery = $_GET['catagery'];
         $id= str_replace(" ","",$id);
-
-        $query1 = "SELECT * FROM $catagery WHERE id=$id";
-        $select1 = mysqli_query($connection, $query1);
-        $recodes1 = mysqli_fetch_assoc($select1);
-
-        $product_id = $recodes1['id'];
-        $name = $recodes1['name'];
-        $price = $recodes1['price'];
-        if($catagery=="cloths" or $catagery=="shoes"){
-            $men_women_kid=$recodes1['men_women_kid'];
-            echo $men_women_kid;
-        }
-
         $quentity = $_REQUEST['quentity'];
         if($catagery=='shoes'||$catagery=='cloths'){
             $size = $_REQUEST['size'];
@@ -41,10 +32,24 @@ require_once('connection.php');
         else{
             $size='';
         }
+        //select item using catagery and id
+        $query1 = "SELECT * FROM $catagery WHERE id=$id";
+        $select1 = mysqli_query($connection, $query1);
+        $recodes1 = mysqli_fetch_assoc($select1);
+        //storing database in variables
+        $product_id = $recodes1['id'];
+        $name = $recodes1['name'];
+        $price = $recodes1['price'];
+        //checking dbatabase table has a colam name 'men_women_kid'
+        if($catagery=="cloths" or $catagery=="shoes"){
+            $men_women_kid=$recodes1['men_women_kid'];
+        }
+        //variable for checking this item already added or not
         $insert=0;
-        $query = "SELECT * FROM cart";
-        $select = mysqli_query($connection, $query);
 
+        $query = "SELECT * FROM cart WHERE user_email='$email'";
+        $select = mysqli_query($connection, $query);
+        //checking this item already added or not
         while ($recodes = mysqli_fetch_assoc($select)) {
             if(($catagery == $recodes['catagory'])&&($id == $recodes['product_id'])){
                 $insert=0;
@@ -54,11 +59,10 @@ require_once('connection.php');
                 $insert=1;
             }
         }
-        
         if (empty($recodes['id'])){
             $insert=1;
         }
-        
+        //add this item to the database cart table
         if($insert===1){
             if($catagery=="cloths" or $catagery=="shoes"){
                 $cart = "INSERT INTO cart (user_email,product_id,catagory,name,price,size,men_women_kid,quentity) 
@@ -69,8 +73,14 @@ require_once('connection.php');
             VALUES ('$email','$product_id','$catagery','$name','$price','$size','$quentity' )";
             mysqli_query($connection, $cart);
             }
-        }
+            $_SESSION["msg"] = 0;
             header("Location: ./cart/cartMain.php?");
+        }
+        else{
+            $url="item_page1.php?id={$id} & catagery={$catagery}";
+            $_SESSION["msg"] = 1;
+            header("Location: $url");
+        }
         ?>
     </div>
 </body>

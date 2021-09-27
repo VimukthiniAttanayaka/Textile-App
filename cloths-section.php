@@ -17,18 +17,17 @@ require_once('connection.php');
     <div class="container-fluid">
         <!--include navbar for home page-->
         <?php include 'navbar.php'; ?>
+         <!--set main image-->
         <img src="images/cloths.png" style="width:100%;"><br><br>
 
         <div class="row">
-
             <?php
+            //select all bag details in 'cloths table'
                 $query1 = "SELECT * FROM cloths";
                 $select1 = mysqli_query($connection, $query1);
                 while ($recodes1 = mysqli_fetch_assoc($select1)) {
                     $id=$recodes1['id'];
-                    $query = "SELECT * FROM `cloths` WHERE id=$id";
-                    $select = mysqli_query($connection, $query);
-                    $recodes = mysqli_fetch_assoc($select);
+                    //setting image paths
                     if ($recodes['men_women_kid'] == 1) {
                         $cloth = "images/cloths/men/$id.0.png";
                     } else if ($recodes['men_women_kid'] == 2) {
@@ -36,12 +35,13 @@ require_once('connection.php');
                     } else if ($recodes['men_women_kid'] == 3) {
                         $cloth = "images/cloths/kid/$id.0.png";
                     }
-                    $id=$id;
                     $catagery = "cloths";
+                    //make variable for import data to item page
                     $url="item_page1.php?id={$id} & catagery={$catagery}";
                 ?> 
 
                 <div class="col-md-4 col-sm-6 col-xs-6">
+                    <!--set link pass data to item page -->
                     <a id='url' href="<?php echo $url;?>">
                         <div>
                             <center><img src=<?php echo $cloth ?> alt="cloth" style="width:80%"></center>

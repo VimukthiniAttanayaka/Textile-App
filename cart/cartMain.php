@@ -13,7 +13,12 @@ session_start();
 <body>
 <?php
 $connection =new mysqli('localhost','root','','shopping');
-require_once './phpOperations/cartQty.php';/*
+require_once './phpOperations/cartQty.php';
+if (isset($_SESSION["email"])) {
+    $email=$_SESSION["email"];
+} else {
+    $email="";
+}/*
 $query = 'SELECT * FROM cart';
 $result = mysqli_query( $connection, $query );
 $stack = array();
@@ -23,7 +28,7 @@ while( $row = mysqli_fetch_array( $result, MYSQLI_ASSOC ) ) {
 */
 
 //print_r($_SESSION['cartQty']);
-$sql = "SELECT catagory, name, quentity FROM cart";
+$sql = "SELECT catagory, name, quentity FROM cart WHERE user_email='$email'";
 $result = $connection->query($sql);
 
 if ($result->num_rows > 0) {

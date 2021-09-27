@@ -21,11 +21,18 @@ require_once('connection.php');
         <!--include navbar for home page-->
         <?php include 'navbar.php'; ?>
         <?php
-            if (isset($_SESSION["email"])) {
-                $_SESSION["is_logged"] = true;
-            } else {
-                $_SESSION["is_logged"] = false;
-            } ?>
+        if (isset($_SESSION["email"])) {
+            $_SESSION["is_logged"] = true;
+        } else {
+            $_SESSION["is_logged"] = false;
+        } 
+        if ($_SESSION["msg"]==1) {?>
+        <div class="alert alert-danger" role="alert" style="text-align: center;">
+        This item already in your cart!
+        </div>
+        <?php 
+        $_SESSION["msg"]=0;
+        } ?>
         <?php
         $id = $_GET['id'];
         $catagery = $_GET['catagery'];
@@ -61,7 +68,7 @@ require_once('connection.php');
                 ?>
                 <div class="row">
                     <center>
-                        <img id="image" src="images/<?php echo $catagery . $gender . $recodes['id']; ?>.0.png" alt="cloth">
+                        <img id="image" src="images/<?php echo $catagery.$gender.$recodes['id']; ?>.0.png" alt="cloth">
                     </center>
                 </div>
                 <div class="row">
@@ -119,38 +126,68 @@ require_once('connection.php');
                             <?php } ?>
                         </p>
                     <?php } ?>
-                    <form>
-                        <p id='label'><label for="quentity">Quentity: </label>
-                            <input class="plus" onclick="quentity.value++">
-                            <input type="number" id="quentity" min="1" name="quentity" placeholder=1 value="1">
-                            <input class="minus" onclick="quentity.value--">
-                        <p>
-                        <div>
-                            <?php if ($_SESSION["is_logged"] == true) : ?>
-                                <center>
-                                    <button class="btn btn-primary" type="submit" name="submit">
-                                        Add To Cart
-                                    </button>
-                                </center>
-                            <?php else : ?>
-                                <center>
-                                    <button class="btn btn-primary" disabled>
-                                        Add To Cart
-                                    </button>
-                                </center>
-                                <div class="alert alert-danger" style="margin:20px" role="alert">
-                                    Please Login/Signup to system!
-                                </div>
-                            <?php endif ?>
-                        </div>
-                    </form>
+                    <span>Avalible Item: </span>
+                    <span id="demo"><?php echo $recodes['total_item']; ?></span>
+                    <script>
+                        var p = 1;
+                        function getQuentity() {
+                            var p = document.getElementById('quentity').value;
+                            var avalible_item = total_item();
+                            updated_value = avalible_item - p;
+                            if (updated_value > -1) {
+                                document.getElementById("demo").innerHTML = updated_value;
+                            } else {
+                                document.getElementById("demo").innerHTML = 0;
+                            }
+                        }
+                        function total_item() {
+                            var avalible_item = document.getElementById("avalible_item").innerHTML;
+                            return avalible_item;
+                        }
+                        function quentity_inc(){
+                            if(quentity.value<document.getElementById("avalible_item").innerHTML){
+                                quentity.value++;
+                            }
+                        }
+                        function quentity_dic(){
+                            if(quentity.value>1){
+                                quentity.value--;
+                            }
+                        }
+                    </script>
+                    <span style="visibility: hidden" id="avalible_item"><?php echo $recodes['total_item']; ?></span>
+                    <p id='label'><label for="quentity">Quentity: </label>
+                        <input class="plus" onclick="quentity_inc(),getQuentity()">
+                        <input type="number" id="quentity" min="1" max=<?php echo $recodes['total_item']; ?> name="quentity" placeholder=1 value="1">
+                        <input class="minus" onclick="quentity_dic(),getQuentity()">
+                        <?php echo "<script>p</script>"; ?>
+                    <p>
                     <div>
-                        <br><?php echo $recodes['discription']; ?>
+                        <?php if ($_SESSION["is_logged"] == true) : ?>
+                            <center>
+                                <button class="btn btn-primary" type="submit" name="submit">
+                                    Add To Cart
+                                </button>
+                            </center>
+                        <?php else : ?>
+                            <center>
+                                <button class="btn btn-primary" disabled>
+                                    Add To Cart
+                                </button>
+                            </center>
+                            <div class="alert alert-danger" style="margin:20px" role="alert">
+                                Please Login/Signup to system!
+                            </div>
+                        <?php endif ?>
                     </div>
+                </form>
+                <div>
+                    <br><?php echo $recodes['discription']; ?>
+                </div>
             </div>
         </div>
 
-        <br>
+        <br> 
         <center>
             <a id='back_to_shopping' href="./home.php">
                 <button class="btn btn-info">

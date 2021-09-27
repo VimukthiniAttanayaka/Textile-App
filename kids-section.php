@@ -26,11 +26,7 @@ require_once('connection.php');
                 $select1 = mysqli_query($connection, $query1);
                 while ($recodes1 = mysqli_fetch_assoc($select1)) {
                     $id=$recodes1['id'];
-                    $query = "SELECT * FROM `cloths` WHERE id=$id";
-                    $select = mysqli_query($connection, $query);
-                    $recodes = mysqli_fetch_assoc($select);
                     $cloth = "images/cloths/kid/$id.0.png";
-                    $id=$id;
                     $catagery = "cloths";
                     $url="item_page1.php?id={$id} & catagery={$catagery}";
                 ?> 
@@ -42,11 +38,11 @@ require_once('connection.php');
                         </div>
                     </a>
                     <div>
-                        <center><?php echo $recodes['name']; ?></center>
+                        <center><?php echo $recodes1['name']; ?></center>
                     </div>
                     <div>
                         <center>
-                            <h5>Rs.<?php echo $recodes['price']; ?></h5>
+                            <h5>Rs.<?php echo $recodes1['price']; ?></h5>
                         </center>
                     </div>
                 </div>
@@ -57,11 +53,7 @@ require_once('connection.php');
                 $select1 = mysqli_query($connection, $query1);
                 while ($recodes1 = mysqli_fetch_assoc($select1)) {
                     $id=$recodes1['id'];
-                    $query = "SELECT * FROM `shoes` WHERE id=$id";
-                    $select = mysqli_query($connection, $query);
-                    $recodes = mysqli_fetch_assoc($select);
                     $shoe = "images/shoes/kid/$id.0.png";
-                    $id=$id;
                     $catagery = "shoes";
                     $url="item_page1.php?id={$id} & catagery={$catagery}";
                 ?> 
@@ -73,11 +65,11 @@ require_once('connection.php');
                         </div>
                     </a>
                     <div>
-                        <center><?php echo $recodes['name']; ?></center>
+                        <center><?php echo $recodes1['name']; ?></center>
                     </div>
                     <div>
                         <center>
-                            <h5>Rs.<?php echo $recodes['price']; ?></h5>
+                            <h5>Rs.<?php echo $recodes1['price']; ?></h5>
                         </center>
                     </div>
                 </div>
@@ -89,11 +81,7 @@ require_once('connection.php');
                 $select1 = mysqli_query($connection, $query1);
                 while ($recodes1 = mysqli_fetch_assoc($select1)) {
                     $id=$recodes1['id'];
-                    $query = "SELECT * FROM `toys` WHERE id=$id";
-                    $select = mysqli_query($connection, $query);
-                    $recodes = mysqli_fetch_assoc($select);
-                        $toy = "images/toys/$id.0.png";
-                    $id=$id;
+                    $toy = "images/toys/$id.0.png";
                     $catagery = "toys";
                     $url="item_page1.php?id={$id} & catagery={$catagery}";
                 ?> 
@@ -105,11 +93,11 @@ require_once('connection.php');
                         </div>
                     </a>
                     <div>
-                        <center><?php echo $recodes['name']; ?></center>
+                        <center><?php echo $recodes1['name']; ?></center>
                     </div>
                     <div>
                         <center>
-                            <h5>Rs.<?php echo $recodes['price']; ?></h5>
+                            <h5>Rs.<?php echo $recodes1['price']; ?></h5>
                         </center>
                     </div>
                 </div>
@@ -121,11 +109,7 @@ require_once('connection.php');
                 $select1 = mysqli_query($connection, $query1);
                 while ($recodes1 = mysqli_fetch_assoc($select1)) {
                     $id=$recodes1['id'];
-                    $query = "SELECT * FROM `bags` WHERE id=$id";
-                    $select = mysqli_query($connection, $query);
-                    $recodes = mysqli_fetch_assoc($select);
                     $bag = "images/bags/$id.0.png";
-                    $id=$id;
                     $catagery = "bags";
                     $url="item_page1.php?id={$id} & catagery={$catagery}";
                 ?> 
@@ -137,11 +121,11 @@ require_once('connection.php');
                         </div>
                     </a>
                     <div>
-                        <center><?php echo $recodes['name']; ?></center>
+                        <center><?php echo $recodes1['name']; ?></center>
                     </div>
                     <div>
                         <center>
-                            <h5>Rs.<?php echo $recodes['price']; ?></h5>
+                            <h5>Rs.<?php echo $recodes1['price']; ?></h5>
                         </center>
                     </div>
                 </div>
