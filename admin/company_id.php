@@ -1,6 +1,6 @@
 <?php 
     //connect with database
-    require_once('connection.php');
+    require_once('../connection.php');
 ?>
 <!DOCTYPE html>
 <html>
@@ -33,8 +33,14 @@
                     $client = "INSERT INTO compani_id (id_no) VALUES ('$compani_id')";
                     mysqli_query($connection,$client);  
                 }
+                if (isset($_GET['del'])) {
+                    $id = $_GET['del'];
+                    $client = "DELETE FROM compani_id WHERE id=$id";
+                        mysqli_query($connection, $client);
+                        echo '<script>window.location = "./user_details.php";</script>';
+                }
             ?>
-            <p class="hello-lg bye-md dog-sm">hello everyone</p>
+            
             <form method="post" action="<?php echo $_SERVER["PHP_SELF"];?>">
                 <table>
                     <tr>

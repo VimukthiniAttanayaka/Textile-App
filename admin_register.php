@@ -67,6 +67,14 @@ require_once('connection.php');
                     //header("Location: ./connection.php?sighup=success");
                 }
             }
+        
+            if (isset($_GET['del'])) {
+                $id = $_GET['del'];
+                $client = "DELETE FROM admin WHERE id=$id";
+                    mysqli_query($connection, $client);
+                    echo '<script>window.location = "./admin/user_details.php";</script>';
+            } 
+
             ?>
             <!--admin registation form-->
             <form method="post" action="<?php echo $_SERVER["PHP_SELF"]; ?>">

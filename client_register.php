@@ -46,7 +46,15 @@ require_once('connection.php');
                 echo '<script>window.location = "home.php";</script>';
             }
         }
+
+        if (isset($_GET['del'])) {
+            $id = $_GET['del'];
+            $client = "DELETE FROM client WHERE id=$id";
+                mysqli_query($connection, $client);
+                echo '<script>window.location = "./admin/user_details.php";</script>';
+        }
         ?>
+        
         <form method="post" action="<?php echo $_SERVER["PHP_SELF"]; ?>">
             <div class="row-lg justify-content-center">
                 <div class="row">

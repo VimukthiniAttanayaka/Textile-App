@@ -11,10 +11,19 @@ require_once('../connection.php');
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../styles/listing.css">
-    <title>Item List</title>
+    <title>Product list</title>
+    <style>
+        #btn{
+            background-color: rgb(45, 219, 45);
+            border-radius: 10%;
+            margin-right: 20px;
+        }
+    </style>
 </head>
 
-<body>
+<body style="background-color: rgb(221, 220, 220);">
+        <!--include navbar for home page-->
+        <?php include 'admin_navbar.php'; ?>
 <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -51,11 +60,14 @@ require_once('../connection.php');
     </div>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-1">
+        <div class="col-1">
                 <a id='url' href="overview.php">Overview</a>
             </div>
             <div class="col-1">
-                <a id='url' href="listing.php">Listings</a>
+                <a id='url' href="user_details.php">User Details</a>
+            </div>
+            <div class="col-1">
+                <a id='url' href="listing.php">Product</a>
             </div>
             <div class="col-1">
                 <a id='url' href="orders.php">Orders</a>
