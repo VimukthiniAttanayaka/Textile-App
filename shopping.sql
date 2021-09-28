@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Sep 28, 2021 at 04:28 AM
+-- Generation Time: Sep 28, 2021 at 07:03 PM
 -- Server version: 8.0.21
 -- PHP Version: 7.3.21
 
@@ -175,17 +175,19 @@ INSERT INTO `cloths` (`id`, `name`, `price`, `size`, `men_women_kid`, `discripti
 
 DROP TABLE IF EXISTS `compani_id`;
 CREATE TABLE IF NOT EXISTS `compani_id` (
-  `id_no` varchar(10) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `id` int NOT NULL AUTO_INCREMENT,
+  `id_no` varchar(10) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `compani_id`
 --
 
-INSERT INTO `compani_id` (`id_no`) VALUES
-('cv23432165'),
-('987653fg45'),
-('0987uy4563');
+INSERT INTO `compani_id` (`id`, `id_no`) VALUES
+(1, 'cv23432165'),
+(2, '987653fg45'),
+(3, '0987uy4563');
 
 -- --------------------------------------------------------
 
@@ -223,8 +225,20 @@ CREATE TABLE IF NOT EXISTS `orders` (
   `list` varchar(255) NOT NULL,
   `address` varchar(100) NOT NULL,
   `total_price` double NOT NULL,
+  `date` date NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `orders`
+--
+
+INSERT INTO `orders` (`id`, `email`, `list`, `address`, `total_price`, `date`) VALUES
+(1, 'sadun@gmail.com', 's:2>3,c:1>4,t:5>1', 'no.234,colombo', 1654.98, '2021-09-28'),
+(2, 'perera@gmail.com', 's:2>1,c:6>3,b:5>1', 'no.237,kandy,akurana', 3458.56, '2021-09-27'),
+(3, 'dumidu@gmail.com', 'b:2>3,c:13>4,t:2>1', 'no.564,polonnaruwa', 4358.68, '2021-09-12'),
+(4, 'chamara@gmail.com', 'b:2>3,c:6>2', 'no.44,colombo', 2554.98, '2021-09-22'),
+(5, 'fred@gmail.com', 'b:2>1,c:1>4,b:5>1,t:1>2', 'no.76,colombo', 1424.98, '2021-09-28');
 
 -- --------------------------------------------------------
 

@@ -18,7 +18,7 @@ require_once('connection.php');
 
 <body>
     <div class="container-fluid">
-        <!--include navbar for home page-->
+        <!--include navbar-->
         <?php include 'navbar.php'; ?>
         <?php
         //checking client loging or not to the system

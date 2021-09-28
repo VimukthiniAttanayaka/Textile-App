@@ -40,6 +40,16 @@ if ($result->num_rows > 0) {
     echo "0 items in Cart";
 }
 ?>
+<?php //generating random value
+      $randomNumber = rand(100000,999999);
+      $_SESSION["code"] = $randomNumber;?>
+<center>
+    <a href="../email_validation.php">
+        <button class="btn btn-info">
+            <h2>Proceed TO Checkout</h2>
+        </button>
+    </a>
+</center>
 <center>
     <a id='back_to_shopping' href="../home.php">
         <button class="btn btn-info">
