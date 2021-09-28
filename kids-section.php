@@ -22,16 +22,20 @@ require_once('connection.php');
         <div class="row">
             <!-- cloths-->
             <?php
+            //select all cloth details for kids in 'cloths table'
                 $query1 = "SELECT * FROM cloths WHERE men_women_kid =3";
                 $select1 = mysqli_query($connection, $query1);
                 while ($recodes1 = mysqli_fetch_assoc($select1)) {
                     $id=$recodes1['id'];
+                    //get image path as a variable
                     $cloth = "images/cloths/kid/$id.0.png";
                     $catagery = "cloths";
+                    //make variable for import data to item page
                     $url="item_page1.php?id={$id} & catagery={$catagery}";
                 ?> 
 
                 <div class="col-md-4 col-sm-6 col-xs-6">
+                    <!--set link pass data to item page -->
                     <a id='url' href="<?php echo $url;?>">
                         <div>
                             <center><img src=<?php echo $cloth ?> alt="cloth" style="width:80%"></center>
@@ -49,16 +53,20 @@ require_once('connection.php');
             <?php } ?>
             <!--shoes-->
             <?php
+            //select all shoe details for kids in 'shoes table'
                 $query1 = "SELECT * FROM shoes WHERE men_women_kid =3";
                 $select1 = mysqli_query($connection, $query1);
                 while ($recodes1 = mysqli_fetch_assoc($select1)) {
                     $id=$recodes1['id'];
+                    //get image path as a variable
                     $shoe = "images/shoes/kid/$id.0.png";
                     $catagery = "shoes";
+                    //make variable for import data to item page
                     $url="item_page1.php?id={$id} & catagery={$catagery}";
                 ?> 
 
                 <div class="col-4">
+                    <!--set link pass data to item page -->
                     <a id='url' href="<?php echo $url;?>">
                         <div>
                             <center><img src=<?php echo $shoe ?> alt="shoes" style="width:80%"></center>
@@ -77,16 +85,20 @@ require_once('connection.php');
 
             <!--toys-->
             <?php
+            //select all toy details in 'toys table'
                 $query1 = "SELECT * FROM toys";
                 $select1 = mysqli_query($connection, $query1);
                 while ($recodes1 = mysqli_fetch_assoc($select1)) {
                     $id=$recodes1['id'];
+                    //get image path as a variable
                     $toy = "images/toys/$id.0.png";
                     $catagery = "toys";
+                    //make variable for import data to item page
                     $url="item_page1.php?id={$id} & catagery={$catagery}";
                 ?> 
 
                 <div class="col-4">
+                    <!--set link pass data to item page -->
                     <a id='url' href="<?php echo $url;?>">
                         <div>
                             <center><img src=<?php echo $toy ?> alt="cloth" style="width:80%"></center>
@@ -105,16 +117,20 @@ require_once('connection.php');
 
             <!--bags-->
             <?php
+            //select all bag details in 'bags table'
                 $query1 = "SELECT * FROM bags";
                 $select1 = mysqli_query($connection, $query1);
                 while ($recodes1 = mysqli_fetch_assoc($select1)) {
                     $id=$recodes1['id'];
+                    //get image path as a variable
                     $bag = "images/bags/$id.0.png";
                     $catagery = "bags";
+                    //make variable for import data to item page
                     $url="item_page1.php?id={$id} & catagery={$catagery}";
                 ?> 
 
                 <div class="col-4">
+                    <!--set link pass data to item page -->
                     <a id='url' href="<?php echo $url;?>">
                         <div>
                             <center><img src=<?php echo $bag ?> alt="bag" style="width:80%"></center>

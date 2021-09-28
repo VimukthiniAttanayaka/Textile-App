@@ -7,7 +7,6 @@ require_once('connection.php');
 
 <!DOCTYPE html>
 <html>
-
 <head lang="en">
     <meta charset="UTF-8">
     <!-- Bootstrap CSS -->
@@ -66,11 +65,11 @@ require_once('connection.php');
         if($insert===1){
             if($catagery=="cloths" or $catagery=="shoes"){
                 $cart = "INSERT INTO cart (user_email,product_id,catagory,name,price,size,men_women_kid,quentity) 
-                VALUES ('$email','$product_id','$catagery','$name','$price','$size','$men_women_kid','$quentity' )";
+                VALUES ('$email','$product_id','$catagery','$name','$price','$size','$men_women_kid','$quentity')";
                 mysqli_query($connection, $cart);
             } else {
             $cart = "INSERT INTO cart (user_email,product_id,catagory,name,price,size,quentity) 
-            VALUES ('$email','$product_id','$catagery','$name','$price','$size','$quentity' )";
+            VALUES ('$email','$product_id','$catagery','$name','$price','$size','$quentity')";
             mysqli_query($connection, $cart);
             }
             $_SESSION["msg"] = 0;

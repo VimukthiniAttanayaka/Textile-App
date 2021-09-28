@@ -21,7 +21,7 @@ require_once('../connection.php');
 <body>
     <div class="container-fluid">
         <div class="row">
-        <?php include 'listing.php'; ?>
+        <?php include 'orders.php'; ?>
         </div>
     </div>
 </body>

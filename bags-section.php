@@ -27,6 +27,7 @@ require_once('connection.php');
                 $select1 = mysqli_query($connection, $query1);
                 while ($recodes1 = mysqli_fetch_assoc($select1)) {
                     $id=$recodes1['id'];
+                    //get image path as a variable
                     $bag = "images/bags/$id.0.png";
                     $catagery = "bags";
                     //make variable for import data to item page

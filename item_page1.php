@@ -21,22 +21,25 @@ require_once('connection.php');
         <!--include navbar for home page-->
         <?php include 'navbar.php'; ?>
         <?php
+        //checking client loging or not to the system
         if (isset($_SESSION["email"])) {
             $_SESSION["is_logged"] = true;
         } else {
             $_SESSION["is_logged"] = false;
-        } 
-        if ($_SESSION["msg"]==1) {?>
-        <div class="alert alert-danger" role="alert" style="text-align: center;">
-        This item already in your cart!
-        </div>
-        <?php 
-        $_SESSION["msg"]=0;
-        } ?>
-        <?php
+        }
+        //alert for user chose item already added cart or not
+        if (isset($_SESSION["msg"])) {
+            if ($_SESSION["msg"] == 1) { ?>
+                <div class="alert alert-danger" role="alert" style="text-align: center;">
+                    This item already in your cart!
+                </div>
+            <?php $_SESSION["msg"] = 0;
+            }
+        }
+        //get item id and catagery
         $id = $_GET['id'];
         $catagery = $_GET['catagery'];
-
+        //write sql query for select that item
         $recodes['men_women_kid'] = 0;
         if ($catagery == 'cloths') {
             $query = "SELECT * FROM `cloths` WHERE id=$id";
@@ -53,6 +56,7 @@ require_once('connection.php');
         <div class="row">
             <div class="col-8" id="item_img">
                 <?php
+                //getting gender as a variable for set item path
                 if ($catagery == 'shoes' || $catagery == 'cloths') {
                     if ($recodes['men_women_kid'] == 1) {
                         $gender = "/men/";
@@ -67,11 +71,13 @@ require_once('connection.php');
 
                 ?>
                 <div class="row">
+                    <!--big image-->
                     <center>
-                        <img id="image" src="images/<?php echo $catagery.$gender.$recodes['id']; ?>.0.png" alt="cloth">
+                        <img id="image" src="images/<?php echo $catagery . $gender . $recodes['id']; ?>.0.png" alt="cloth">
                     </center>
                 </div>
                 <div class="row">
+                    <!-- router images-->
                     <div class="col-2">
                         <button onclick="document.getElementById('image').src='images/<?php echo $catagery . $gender . $recodes['id']; ?>.0.png'" id="img-btn">
                             <img src='images/<?php echo $catagery . $gender . $recodes['id']; ?>.0.png' id="img-sm">
@@ -91,14 +97,16 @@ require_once('connection.php');
             </div>
 
             <div class="col-4" id="item_detail">
+                <!-- write item name and price-->
                 <h3 id="name"><?php echo $recodes['name']; ?></h3>
                 <h5 id="name">Rs.<?php echo $recodes['price']; ?></h5>
-
+                <!--variable for set form sending path-->
                 <?php $url = "add_cart.php?id={$id}& catagery={$catagery}"; ?>
-
+                <!-- form for getting size and quentity-->
                 <form method="post" action="<?php echo $url; ?>">
                     <?php if ($catagery == 'shoes' || $catagery == 'cloths') { ?>
                         <p id='label'><label for="size">Size:</label>
+                        <!--imput field for get item size-->
                             <?php if ($recodes['men_women_kid'] == 1) { ?>
                                 <select name="size">
                                     <option value="37">37</option>
@@ -126,10 +134,13 @@ require_once('connection.php');
                             <?php } ?>
                         </p>
                     <?php } ?>
+                    <!--put avalible item count in web page-->
                     <span>Avalible Item: </span>
                     <span id="demo"><?php echo $recodes['total_item']; ?></span>
+
                     <script>
                         var p = 1;
+                        //function for get user input quentity
                         function getQuentity() {
                             var p = document.getElementById('quentity').value;
                             var avalible_item = total_item();
@@ -140,29 +151,34 @@ require_once('connection.php');
                                 document.getElementById("demo").innerHTML = 0;
                             }
                         }
+                        //function for get avalible item count in the db
                         function total_item() {
                             var avalible_item = document.getElementById("avalible_item").innerHTML;
                             return avalible_item;
                         }
-                        function quentity_inc(){
-                            if(quentity.value<document.getElementById("avalible_item").innerHTML){
+                        //function for incresing user quentity
+                        function quentity_inc() {
+                            if (quentity.value < document.getElementById("avalible_item").innerHTML) {
                                 quentity.value++;
                             }
                         }
-                        function quentity_dic(){
-                            if(quentity.value>1){
+                        //function for dicresing user quentity
+                        function quentity_dic() {
+                            if (quentity.value > 1) {
                                 quentity.value--;
                             }
                         }
                     </script>
+                    <!--getting avalible item in db -->
                     <span style="visibility: hidden" id="avalible_item"><?php echo $recodes['total_item']; ?></span>
+                    <!--user input field for getting quentity-->
                     <p id='label'><label for="quentity">Quentity: </label>
                         <input class="plus" onclick="quentity_inc(),getQuentity()">
                         <input type="number" id="quentity" min="1" max=<?php echo $recodes['total_item']; ?> name="quentity" placeholder=1 value="1">
                         <input class="minus" onclick="quentity_dic(),getQuentity()">
-                        <?php echo "<script>p</script>"; ?>
-                    <p>
+                    </p>
                     <div>
+                        <!--submit button for sending user input for db-->
                         <?php if ($_SESSION["is_logged"] == true) : ?>
                             <center>
                                 <button class="btn btn-primary" type="submit" name="submit">
@@ -170,6 +186,7 @@ require_once('connection.php');
                                 </button>
                             </center>
                         <?php else : ?>
+                            <!--if user is not login this system setsubmit button as a disable-->
                             <center>
                                 <button class="btn btn-primary" disabled>
                                     Add To Cart
@@ -182,13 +199,15 @@ require_once('connection.php');
                     </div>
                 </form>
                 <div>
+                    <!--write item discription-->
                     <br><?php echo $recodes['discription']; ?>
                 </div>
             </div>
         </div>
 
-        <br> 
+        <br>
         <center>
+            <!--link for home page-->
             <a id='back_to_shopping' href="./home.php">
                 <button class="btn btn-info">
                     <i class='fas fa-angle-double-down' style='font-size:50px;color:darkblue;'></i>

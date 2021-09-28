@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Sep 26, 2021 at 11:37 AM
+-- Generation Time: Sep 28, 2021 at 04:28 AM
 -- Server version: 8.0.21
 -- PHP Version: 7.3.21
 
@@ -34,7 +34,16 @@ CREATE TABLE IF NOT EXISTS `admin` (
   `password` varchar(40) NOT NULL,
   `company_id` varchar(15) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `admin`
+--
+
+INSERT INTO `admin` (`id`, `email`, `password`, `company_id`) VALUES
+(1, 'perera@gmail.com', 'b9c3cd4c12ea09e5bafa5814f51cfa18', 'cv23432165'),
+(2, 'ranatunga@gmail.com', 'c37bf859faf392800d739a41fe5af151', '987653fg45'),
+(3, 'rosi@gmail.com', '83b9e3ce5f8ab1cbb375821b0249addd', '0987uy4563');
 
 -- --------------------------------------------------------
 
@@ -73,6 +82,7 @@ INSERT INTO `bags` (`id`, `name`, `price`, `discription`, `total_item`, `sold_it
 DROP TABLE IF EXISTS `cart`;
 CREATE TABLE IF NOT EXISTS `cart` (
   `id` int NOT NULL AUTO_INCREMENT,
+  `user_email` varchar(100) NOT NULL,
   `product_id` int NOT NULL,
   `catagory` varchar(100) NOT NULL,
   `name` varchar(100) NOT NULL,
@@ -81,22 +91,19 @@ CREATE TABLE IF NOT EXISTS `cart` (
   `men_women_kid` int NOT NULL,
   `quentity` int NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `cart`
 --
 
-INSERT INTO `cart` (`id`, `product_id`, `catagory`, `name`, `price`, `size`, `men_women_kid`, `quentity`) VALUES
-(1, 1, 'cloths', 'Checked Lounge Set', 2499.99, 37, 1, 1),
-(2, 2, 'cloths', 'Heathered Pyjamas with Elasticated Waist', 2999.99, 37, 1, 1),
-(3, 9, 'cloths', 'Slim Fit Pleat-Front Pants', 1999.99, 37, 2, 1),
-(4, 13, 'cloths', 'Satin Woven Top & Pyjamas Set', 674, 37, 3, 1),
-(5, 5, 'shoes', 'Marathon Nebula Dark Grey', 4999.99, 37, 1, 1),
-(6, 9, 'shoes', 'Pointed-Toe Ballerinas', 1399.99, 37, 2, 1),
-(7, 3, 'bags', 'Unisex Sea Green Solid Backpack', 4599.99, 0, 0, 1),
-(8, 5, 'toys', 'Tiny Tukkins Playset', 999.99, 0, 0, 1),
-(9, 3, 'toys', 'Beadery Wonder Loom Kit', 1499.99, 0, 0, 1);
+INSERT INTO `cart` (`id`, `user_email`, `product_id`, `catagory`, `name`, `price`, `size`, `men_women_kid`, `quentity`) VALUES
+(1, 'sumudu@gmail.com', 1, 'cloths', 'Checked Lounge Set', 2499.99, 37, 1, 1),
+(2, 'sumudu@gmail.com', 13, 'cloths', 'Satin Woven Top & Pyjamas Set', 674, 37, 3, 2),
+(3, 'sumudu@gmail.com', 9, 'shoes', 'Pointed-Toe Ballerinas', 1399.99, 37, 2, 1),
+(4, 'dulmina@gmail.com', 1, 'cloths', 'Checked Lounge Set', 2499.99, 37, 1, 1),
+(5, 'dulmina@gmail.com', 7, 'shoes', 'Chunky Heeled Strappy Slip-On Sandals with Clear Strap', 1599.99, 37, 2, 2),
+(6, 'dulmina@gmail.com', 1, 'toys', 'hoverboards', 7500, 0, 0, 1);
 
 -- --------------------------------------------------------
 
@@ -110,14 +117,15 @@ CREATE TABLE IF NOT EXISTS `client` (
   `email` varchar(100) NOT NULL,
   `password` varchar(40) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `client`
 --
 
 INSERT INTO `client` (`id`, `email`, `password`) VALUES
-(1, 'cat@gmail.com', 'd077f244def8a70e5ea758bd8352fcd8');
+(1, 'sumudu@gmail.com', '51557d9f988aac6ce143958cb801afff'),
+(2, 'dulmina@gmail.com', '28851e98171abc6cc1b6af78da741456');
 
 -- --------------------------------------------------------
 
@@ -199,7 +207,8 @@ CREATE TABLE IF NOT EXISTS `feedback_form` (
 --
 
 INSERT INTO `feedback_form` (`name`, `phone_no`, `email`, `feedback`) VALUES
-('Jane', 2147483647, 'vimukthinia@gmail.com', 'wefhbrewf wefvrwefdnew qedqowfd evr2374f 2grwef');
+('Jane', 2147483647, 'vimukthinia@gmail.com', 'wefhbrewf wefvrwefdnew qedqowfd evr2374f 2grwef'),
+('sumudu perera', 745637098, 'sumudu@gmail.com', 'wery good work');
 
 -- --------------------------------------------------------
 
