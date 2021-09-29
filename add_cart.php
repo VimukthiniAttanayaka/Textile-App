@@ -73,7 +73,7 @@ require_once('connection.php');
             mysqli_query($connection, $cart);
             }
             $_SESSION["msg"] = 0;
-            header("Location: ./cart/cartMain.php?");
+            header("Location: ./cartMain.php?");
         }
         else{
             $url="item_page1.php?id={$id} & catagery={$catagery}";

@@ -35,7 +35,11 @@ require_once('connection.php');
                 if ($recodes && $password == $recodes['password']) {
                     //checking password matching or not
                     $_SESSION["email"] = $email;
-                    echo '<script>window.location = "home.php";</script>';
+                    //generating random value
+                    $randomNumber = rand(100000,999999);
+                    $_SESSION["code"] = $randomNumber;
+                    
+                    echo '<script>window.location = "email_validation.php";</script>';
                 } else {
                     $error = "Check your e-mail and Password again";
                 }

@@ -28,11 +28,11 @@ require_once('connection.php');
                 while ($recodes1 = mysqli_fetch_assoc($select1)) {
                     $id=$recodes1['id'];
                     //setting image paths
-                    if ($recodes['men_women_kid'] == 1) {
+                    if ($recodes1['men_women_kid'] == 1) {
                         $cloth = "images/cloths/men/$id.0.png";
-                    } else if ($recodes['men_women_kid'] == 2) {
+                    } else if ($recodes1['men_women_kid'] == 2) {
                         $cloth = "images/cloths/women/$id.0.png";
-                    } else if ($recodes['men_women_kid'] == 3) {
+                    } else if ($recodes1['men_women_kid'] == 3) {
                         $cloth = "images/cloths/kid/$id.0.png";
                     }
                     $catagery = "cloths";
@@ -48,11 +48,11 @@ require_once('connection.php');
                         </div>
                     </a>
                     <div>
-                        <center><?php echo $recodes['name']; ?></center>
+                        <center><?php echo $recodes1['name']; ?></center>
                     </div>
                     <div>
                         <center>
-                            <h5>Rs.<?php echo $recodes['price']; ?></h5>
+                            <h5>Rs.<?php echo $recodes1['price']; ?></h5>
                         </center>
                     </div>
                 </div>

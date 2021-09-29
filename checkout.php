@@ -17,18 +17,36 @@
         <!--include navbar-->
         <?php include 'navbar.php'; ?>
         <div class="row" id="form">
-            <?php
-                if(isset($_REQUEST['submit'])){
-                    $compani_id = $_REQUEST['compani_id'];
-                    $client = "INSERT INTO compani_id (id_no) VALUES ('$compani_id')";
-                    mysqli_query($connection,$client);  
-                }
-                if (isset($_GET['del'])) {
-                    $id = $_GET['del'];
-                    $client = "DELETE FROM compani_id WHERE id=$id";
-                        mysqli_query($connection, $client);
-                        echo '<script>window.location = "./user_details.php";</script>';
-                }
+        <?php
+        $totalCost =$_GET['totalPrice'];
+        echo $totalCost;
+        //variable for store errer messages 
+        $error = "";
+        if (isset($_REQUEST['submit'])) {
+            //storing userinputs into veriables
+            $first_name = $_REQUEST['first_name'];
+            $last_name = $_REQUEST['last_name'];
+            $address = $_REQUEST['address'];
+            $city = $_REQUEST['city'];
+            $phone_no = $_REQUEST['phone_no'];
+            //checking user input fields are empty or not
+            if (empty(trim($first_name))) {
+                $error = "Please fill first_name";
+            } else if (empty(trim($last_name))) {
+                $error = "Please fill last_name";
+            } else if (empty(trim($address))) {
+                $error = "Please fill address";
+            } else if (empty(trim($city))) {
+                $error = "Please fill city";
+            } else if (empty(trim($phone_no))) {
+                $error = "Please fill phone_no";
+            }
+
+            //sending user inputs database
+            else {
+                echo '<script>window.location = "home.php";</script>';
+            }
+        }
             ?>
             <center><br><br><h3>Billing Details</h3><center>
             <center><div style="background-color: white;padding:5%;margin-top:2%" class="col-5">
@@ -58,7 +76,10 @@
                 <div  id="paypal-button" style="text-align:right;">
                     <button type="submit" class="btn btn-primary" name="submit">Submit</button>
                 </div>
-                <script src="https://www.paypalobjects.com/api/checkout.js"></script>
+                <!--<div  id="paypal-button" style="text-align:right;">
+                    <button type="submit" class="btn btn-primary" name="submit">Submit</button>
+                </div>
+                <script src="https://www.paypalobjects.com/api/checkout.js"></script>-->
             </form>
             <div class="row">
                 <br><h6>Total Amount =</h6>

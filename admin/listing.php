@@ -24,7 +24,7 @@ require_once('../connection.php');
 <body style="background-color: rgb(221, 220, 220);">
         <!--include navbar for home page-->
         <?php include 'admin_navbar.php'; ?>
-<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div class="modal fade" id="staticBackdrop1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -32,16 +32,16 @@ require_once('../connection.php');
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <?php if (isset($_REQUEST['submit'])) {
+                    <?php if (isset($_REQUEST['submit1'])) {
                         $catagery = $_REQUEST['catagery'];
                         if ($catagery == "bags") {
-                            header("Location: ./add-bags.php");
+                            echo '<script>window.location = "./add-bags.php";</script>';
                         } else if ($catagery == "cloths") {
-                            header("Location: add-cloths.php");
+                            echo '<script>window.location = "./add-cloths.php";</script>';
                         } else if ($catagery == "shoes") {
-                            header("Location: add-shoes.php");
+                            echo '<script>window.location = "./add-shoes.php";</script>';
                         } else {
-                            header("Location: add-toys.php");
+                            echo '<script>window.location = "./add-toys.php";</script>';
                         }
                     } ?>
                     <form method="post" action="<?php echo $_SERVER["PHP_SELF"]; ?>">
@@ -52,7 +52,7 @@ require_once('../connection.php');
                                 <option value="shoes">shoes</option>
                                 <option value="toys">toys</option>
                             </select>
-                        <div><center><button class="btn btn-primary" type="submit" name="submit">Continue</button></center></div>
+                        <div><center><button class="btn btn-primary" type="submit" name="submit1">Continue</button></center></div>
                     </form>
                 </div>
             </div>
@@ -236,7 +236,7 @@ require_once('../connection.php');
                 } ?>
             </table>
         </div>
-        <center><button id="addnew" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Add New</button></center>
+        <center><button id="addnew" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop1">Add New</button></center>
     </div>
 </body>
 

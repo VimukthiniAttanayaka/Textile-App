@@ -88,7 +88,7 @@ require_once './cart/phpOperations/cartQty.php';
           <?php include 'cart-modal.php'; ?>
         </div>
         <div class="modal-footer">
-          <a href="./cart/cartMain.php" class="link-success"><button type="button" class="btn btn-primary">View Cart</button></a>
+          <a href="./cartMain.php" class="link-success"><button type="button" class="btn btn-primary">View Cart</button></a>
         </div>
       </div>
     </div>

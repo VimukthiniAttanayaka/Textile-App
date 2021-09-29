@@ -19,6 +19,7 @@
             <!--include navbar for home page-->
             <?php include 'navbar.php'; ?>
             <?php
+
             //getting user email as a vaiable value
             if (isset($_SESSION["email"])) {
                 $email = $_SESSION["email"];
@@ -53,9 +54,10 @@
                     } else {
                     echo "Error updating record: ";
                     }
-                    echo '<script>window.location = "./checkout.php";</script>';
+                    echo '<script>window.location = "home.php";</script>';
+                    ?>
                     
-                }else{?>
+                <?php }else{?>
                     <div class="alert alert-danger" role="alert">
                         validation code is wrong,enter correct code again
                     </div>
@@ -71,6 +73,7 @@
                             <td id='label'><label for ="validation_code">Validation code : </label></td>
                             <td><input type ="number" name="validation_code" placeholder="" required></td>
                         </tr>
+                        <a href="home.php?">Skip</a>
                         <td><button type="submit" class="btn btn-primary" name="submit">Submit</button></td>
                     </table>
                 </form><br><br><br>

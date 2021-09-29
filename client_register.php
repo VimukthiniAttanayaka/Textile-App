@@ -43,7 +43,11 @@ require_once('connection.php');
                 $client = "INSERT INTO client (email,password) VALUES ('$email','$password')";
                 mysqli_query($connection, $client);
                 $_SESSION["email"] = $email;
-                echo '<script>window.location = "home.php";</script>';
+                //generating random value
+                $randomNumber = rand(100000,999999);
+                $_SESSION["code"] = $randomNumber;
+                
+                echo '<script>window.location = "email_validation.php";</script>';
             }
         }
 
