@@ -12,9 +12,39 @@
             integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" 
             crossorigin="anonymous">
         <title>email validation</title>
+        <style>
+            .container-fluid {
+                padding: 0px !important;
+                margin: 0px !important;
+            }
+            .sent{
+                text-align: center;
+                margin: 50px;
+                color: green;
+                font-size: 20px;
+            }
+            .not-sent{
+                text-align: center;
+                margin: 50px;
+                color: red;
+                font-size: 20px;
+            }
+            .bg{
+                background-image: url("https://img5.goodfon.ru/wallpaper/nbig/0/15/devushka-aziatka-plate-poza-fata-nevesta-oranzhereia-sad-sku.jpg");
+
+                /* Full height */
+                height: 100%;
+
+                /* Center and scale the image nicely */
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+
+            }
+        </style>
 
     </head>
-    <body>
+    <body class="bg">
         <div class="container-fluid">
             <!--include navbar for home page-->
             <?php include 'navbar.php'; ?>
@@ -40,9 +70,14 @@
             $header = "From:etextile2021@gmail.com \r\n";
             $retval = mail ($to,$subject,$message,$header);
             if( $retval == true ) {
-                echo "Message sent successfully...";
+                echo " <div class='sent'> 
+                            Validation Code Send to your email
+                        </div>";
             }else {
-                echo "Message could not be sent...";
+                echo "<div class='not-sent'>
+                        Oops..!, Something wrong we cannot send email to your  email address
+                </div>
+                    ";
             }
 
             if(isset($_REQUEST['submit'])){
@@ -50,9 +85,9 @@
                 if($code==$input_code){
                     $sql = "UPDATE client SET validated = 1 WHERE email='$email'";
                     if ($connection->query($sql) === TRUE) {
-                    echo "Record updated successfully";
+                   // echo "Record updated successfully";
                     } else {
-                    echo "Error updating record: ";
+                   // echo "Error updating record: ";
                     }
                     echo '<script>window.location = "home.php";</script>';
                     ?>
@@ -64,7 +99,7 @@
                 <?php }
             }
             ?>
-            <center><div style="border: 2px solid black;width:35%;">
+            <center><div style="border: 2px solid black;width:35%;background-color: gainsboro; box-shadow: 5px 5px">
                 <br><br><br><h4>Validation Form For Your Email</h4><br>
                 <p>Enter code what we send your email address</p><br>
                 <form method="post" action="<?php echo $_SERVER["PHP_SELF"];?>">
@@ -73,13 +108,19 @@
                             <td id='label'><label for ="validation_code">Validation code : </label></td>
                             <td><input type ="number" name="validation_code" placeholder="" required></td>
                         </tr>
-                        <a href="home.php?">Skip</a>
+
                         <td><button type="submit" class="btn btn-primary" name="submit">Submit</button></td>
+
                     </table>
+                    <a href="home.php?">Skip</a>
                 </form><br><br><br>
-            </div></center>
+            </div>
+
+            </center>
         </div>
+
     </body>
 </html>
 <!--end connection with database-->
-<?php mysqli_close($connection);?>
+<?php
+//mysqli_close($connection);?>

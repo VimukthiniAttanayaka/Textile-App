@@ -1,6 +1,9 @@
 <?php
 //connect with database
 require_once('../connection.php');
+
+date_default_timezone_set('Asia/Colombo');
+$date = date('Y-m-d ');
 ?>
 <!DOCTYPE html>
 <html>
@@ -18,10 +21,10 @@ require_once('../connection.php');
     </style>
 </head>
 
-<body>
+<body style="padding: 50px;">
     <div class="container-fluid">
         <div class="row">
-        <div class="col-1">
+            <div class="col-1">
                 <a id='url' href="overview.php">Overview</a>
             </div>
             <div class="col-1">
@@ -33,6 +36,17 @@ require_once('../connection.php');
             <div class="col-1">
                 <a id='url' href="orders.php">Orders</a>
             </div>
+        </div>
+        <div class="row">
+            <?php 
+                $totalCost=0;
+                $query1 = "SELECT * FROM orders WHERE date=$date";
+                $select1 = mysqli_query($connection, $query1);
+                while ($recodes1 = mysqli_fetch_assoc($select1)) {
+                    $totalCost += $recodes1["total_price"];
+                }
+                echo $totalCost;
+            ?>
         </div>
     </div>
 </body>

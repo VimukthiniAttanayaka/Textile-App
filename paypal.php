@@ -12,6 +12,10 @@
             padding: 0px !important;
             margin: 0px !important;
         }
+        .paypal {
+            height: 400px;
+            width: auto;
+        }
     </style>
 </head>
 
@@ -20,7 +24,10 @@
     <?php include 'navbar.php'; 
     $totalCost =$_SESSION['cart_total'];
     ?>
-    <div  id="paypal-button" style="text-align:right;"></div>
+   <div class="row">
+       <img src="https://vectorlogo4u.com/wp-content/uploads/2020/10/paypal-01.png" align="center" class="paypal">
+   </div>
+    <div  id="paypal-button" style="text-align:center;"></div>
             <script src="https://www.paypalobjects.com/api/checkout.js"></script>
 
             <span style="visibility: hidden" id="total"><?php echo $totalCost; ?></span>
@@ -36,7 +43,7 @@
             // Customize button (optional)
             locale: 'en_US',
             style: {
-            size: 'small',
+            size: 'large',
             color: 'gold',
             shape: 'pill',
             },
