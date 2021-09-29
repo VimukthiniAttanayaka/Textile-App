@@ -47,7 +47,14 @@
             if(isset($_REQUEST['submit'])){
                 $input_code = $_REQUEST['validation_code'];
                 if($code==$input_code){
+                    $sql = "UPDATE client SET validated = 1 WHERE email='$email'";
+                    if ($connection->query($sql) === TRUE) {
+                    echo "Record updated successfully";
+                    } else {
+                    echo "Error updating record: ";
+                    }
                     echo '<script>window.location = "./checkout.php";</script>';
+                    
                 }else{?>
                     <div class="alert alert-danger" role="alert">
                         validation code is wrong,enter correct code again

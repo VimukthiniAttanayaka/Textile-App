@@ -40,16 +40,37 @@ if ($result->num_rows > 0) {
     echo "0 items in Cart";
 }
 ?>
-<?php //generating random value
-      $randomNumber = rand(100000,999999);
-      $_SESSION["code"] = $randomNumber;?>
-<center>
-    <a href="../email_validation.php">
+<?php
+
+//$email =$_SESSION['email'];
+    $query1 = "SELECT validated FROM client WHERE email = '$email'";
+    $select1 = mysqli_query($connection, $query1);
+    $user_validation = mysqli_fetch_assoc($select1);
+    
+        if($user_validation['validated'] == '1'){ ?>
+        <center>
+        <a href="../checkout.php">
         <button class="btn btn-info">
-            <h2>Proceed TO Checkout</h2>
+        <h2>Proceed TO Checkout</h2>
         </button>
-    </a>
-</center>
+        </a>
+        </center>
+        <?php
+
+        }else{
+        //generating random value
+        $randomNumber = rand(100000,999999);
+        $_SESSION["code"] = $randomNumber;
+        ?>
+        <center>
+        <a href="../email_validation.php">
+        <button class="btn btn-info">
+        <h2>Proceed TO Checkout</h2>
+        </button>
+        </a>
+        </center>
+
+<?php } ?>
 <center>
     <a id='back_to_shopping' href="../home.php">
         <button class="btn btn-info">
