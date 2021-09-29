@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Sep 28, 2021 at 07:03 PM
+-- Generation Time: Sep 29, 2021 at 01:03 PM
 -- Server version: 8.0.21
 -- PHP Version: 7.3.21
 
@@ -67,11 +67,11 @@ CREATE TABLE IF NOT EXISTS `bags` (
 --
 
 INSERT INTO `bags` (`id`, `name`, `price`, `discription`, `total_item`, `sold_item`) VALUES
-(1, 'Unisex Black Solid Backpack', 3199.99, 'Black backpack Padded haul loop 2 main compartments with zip closure', 10, 0),
-(2, 'Unisex Blue 65 Litres Rucksack', 4499.99, 'Blue rucksack, secured with drawstring fastening One padded haul loop', 10, 0),
-(3, 'Unisex Sea Green Solid Backpack', 4599.99, 'This bag of Provogue comes with spacious comparment with unique design', 10, 0),
-(4, 'Unisex Brown Solid Backpack', 1999.99, 'Brown solid backpack Padded haul loop, ergonomic shoulder straps', 10, 0),
-(5, 'Unisex Grey & Black Solid Training Duffel Bag', 1999.99, 'Black solid gym duffel bag One shoulder strap', 10, 0);
+(1, 'Unisex Black Solid Backpack', 3199.99, 'Black backpack Padded haul loop 2 main compartments with zip closure', 5, 0),
+(2, 'Unisex Blue 65 Litres Rucksack', 4499.99, 'Blue rucksack, secured with drawstring fastening One padded haul loop', 5, 0),
+(3, 'Unisex Sea Green Solid Backpack', 4599.99, 'This bag of Provogue comes with spacious comparment with unique design', 5, 0),
+(4, 'Unisex Brown Solid Backpack', 1999.99, 'Brown solid backpack Padded haul loop, ergonomic shoulder straps', 5, 0),
+(5, 'Unisex Grey & Black Solid Training Duffel Bag', 1999.99, 'Black solid gym duffel bag One shoulder strap', 5, 0);
 
 -- --------------------------------------------------------
 
@@ -91,7 +91,7 @@ CREATE TABLE IF NOT EXISTS `cart` (
   `men_women_kid` int NOT NULL,
   `quentity` int NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `cart`
@@ -116,16 +116,17 @@ CREATE TABLE IF NOT EXISTS `client` (
   `id` int NOT NULL AUTO_INCREMENT,
   `email` varchar(100) NOT NULL,
   `password` varchar(40) NOT NULL,
+  `validated` tinyint(1) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `client`
 --
 
-INSERT INTO `client` (`id`, `email`, `password`) VALUES
-(1, 'sumudu@gmail.com', '51557d9f988aac6ce143958cb801afff'),
-(2, 'dulmina@gmail.com', '28851e98171abc6cc1b6af78da741456');
+INSERT INTO `client` (`id`, `email`, `password`, `validated`) VALUES
+(1, 'sumudu@gmail.com', '51557d9f988aac6ce143958cb801afff', 1),
+(2, 'dulmina@gmail.com', '28851e98171abc6cc1b6af78da741456', 0);
 
 -- --------------------------------------------------------
 
@@ -222,23 +223,25 @@ DROP TABLE IF EXISTS `orders`;
 CREATE TABLE IF NOT EXISTS `orders` (
   `id` int NOT NULL AUTO_INCREMENT,
   `email` varchar(100) NOT NULL,
+  `name` varchar(200) NOT NULL,
   `list` varchar(255) NOT NULL,
   `address` varchar(100) NOT NULL,
+  `phone_no` int NOT NULL,
   `total_price` double NOT NULL,
   `date` date NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `orders`
 --
 
-INSERT INTO `orders` (`id`, `email`, `list`, `address`, `total_price`, `date`) VALUES
-(1, 'sadun@gmail.com', 's:2>3,c:1>4,t:5>1', 'no.234,colombo', 1654.98, '2021-09-28'),
-(2, 'perera@gmail.com', 's:2>1,c:6>3,b:5>1', 'no.237,kandy,akurana', 3458.56, '2021-09-27'),
-(3, 'dumidu@gmail.com', 'b:2>3,c:13>4,t:2>1', 'no.564,polonnaruwa', 4358.68, '2021-09-12'),
-(4, 'chamara@gmail.com', 'b:2>3,c:6>2', 'no.44,colombo', 2554.98, '2021-09-22'),
-(5, 'fred@gmail.com', 'b:2>1,c:1>4,b:5>1,t:1>2', 'no.76,colombo', 1424.98, '2021-09-28');
+INSERT INTO `orders` (`id`, `email`, `name`, `list`, `address`, `phone_no`, `total_price`, `date`) VALUES
+(1, 'sadun@gmail.com', 'sadun kumara', 's:2>3,c:1>4,t:5>1', 'no.234,colombo', 756435876, 1654.98, '2021-09-28'),
+(2, 'perera@gmail.com', 'dasun perera', 's:2>1,c:6>3,b:5>1', 'no.237,kandy,akurana', 453876564, 3458.56, '2021-09-27'),
+(3, 'dumidu@gmail.com', 'dumidu ranatunga', 'b:2>3,c:13>4,t:2>1', 'no.564,polonnaruwa', 784523495, 4358.68, '2021-09-12'),
+(4, 'chamara@gmail.com', 'chamara bandara', 'b:2>3,c:6>2', 'no.44,colombo', 812650876, 2554.98, '2021-09-22'),
+(5, 'fred@gmail.com', 'devid pranandu', 'b:2>1,c:1>4,b:5>1,t:1>2', 'no.76,colombo', 236545876, 1424.98, '2021-09-28');
 
 -- --------------------------------------------------------
 
@@ -264,21 +267,21 @@ CREATE TABLE IF NOT EXISTS `shoes` (
 --
 
 INSERT INTO `shoes` (`id`, `name`, `price`, `size`, `men_women_kid`, `discription`, `total_item`, `sold_item`) VALUES
-(1, 'Atom Eternal 2.0 Black', 4999.99, 37, 1, 'The perfect mix between the comfort ', 10, 0),
-(2, 'Atom Oasis Pink', 4499.99, 35, 1, 'the noisy city, find your Oasis in the middle of the urban jungle with these sneakers', 10, 0),
-(3, 'Marathon Skin Black', 5499.99, 37, 1, 'The Marathon family grows with its more formal evolution ', 10, 0),
-(4, 'Marathon Nebula Grey', 3499.99, 37, 1, 'we bring you Nebula, a new chromatic galaxy', 10, 0),
-(5, 'Marathon Nebula Dark Grey', 4999.99, 37, 1, 'The same elegant design, with the technical-sporty ', 10, 0),
-(6, 'Sling-Back Flat Sandals with Cut-Outs', 2100, 37, 2, '•  Wipe with a clean, dry cloth when needed •  Genuine leather upper •  TPR sole', 10, 0),
-(7, 'Chunky Heeled Strappy Slip-On Sandals with Clear Strap', 1599.99, 37, 2, '•  Wipe with a clean, dry cloth when needed •  Heel height: 2 inches •  Regular Fit', 10, 0),
+(1, 'Atom Eternal 2.0 Black', 4999.99, 37, 1, 'The perfect mix between the comfort ', 7, 0),
+(2, 'Atom Oasis Pink', 4499.99, 35, 1, 'the noisy city, find your Oasis in the middle of the urban jungle with these sneakers', 9, 0),
+(3, 'Marathon Skin Black', 5499.99, 37, 1, 'The Marathon family grows with its more formal evolution ', 5, 0),
+(4, 'Marathon Nebula Grey', 3499.99, 37, 1, 'we bring you Nebula, a new chromatic galaxy', 8, 0),
+(5, 'Marathon Nebula Dark Grey', 4999.99, 37, 1, 'The same elegant design, with the technical-sporty ', 6, 0),
+(6, 'Sling-Back Flat Sandals with Cut-Outs', 2100, 37, 2, '•  Wipe with a clean, dry cloth when needed •  Genuine leather upper •  TPR sole', 5, 0),
+(7, 'Chunky Heeled Strappy Slip-On Sandals with Clear Strap', 1599.99, 37, 2, '•  Wipe with a clean, dry cloth when needed •  Heel height: 2 inches •  Regular Fit', 8, 2),
 (8, 'Strappy Flat Sandals with Ankle Strap', 1499.99, 37, 2, '•  100% PU upper •  100% TPR sole •  Regular Fit', 9, 0),
-(9, 'Pointed-Toe Ballerinas', 1399.99, 37, 2, '•  Metal accent •  Regular Fit •  Synthetic upper •  TPR sole', 10, 0),
-(10, 'Chunky Heeled Sandals', 1000, 37, 2, '•  Fabric insole •  Regular •  Synthetic upper', 10, 0),
-(11, 'Printed Slingback Clogs', 1345, 15, 3, '•  Croslite upper & sole •  Slip-on styling •  Regular Fit', 10, 0),
-(12, 'Casual Shoes with Embroidered Accent', 1499.99, 15, 3, '•  Genuine leather upper •  TPR sole', 10, 0),
-(13, 'Low-Top Lace-Up Sneakers', 750, 15, 3, '•  Lace fastening •  Regular Fit •  PU upper', 10, 0),
-(14, 'Disney Frozen Print Ballerinas', 549.99, 13, 3, '•  Slip-on styling •  3-month warranty against manufacturing defects', 10, 0),
-(15, 'Textured Lace-Up Sports Shoes', 692, 10, 3, '•  Lace fastening •  Fabric upper •  Rubber sole', 10, 0);
+(9, 'Pointed-Toe Ballerinas', 1399.99, 37, 2, '•  Metal accent •  Regular Fit •  Synthetic upper •  TPR sole', 6, 0),
+(10, 'Chunky Heeled Sandals', 1000, 37, 2, '•  Fabric insole •  Regular •  Synthetic upper', 9, 1),
+(11, 'Printed Slingback Clogs', 1345, 15, 3, '•  Croslite upper & sole •  Slip-on styling •  Regular Fit', 4, 3),
+(12, 'Casual Shoes with Embroidered Accent', 1499.99, 15, 3, '•  Genuine leather upper •  TPR sole', 7, 1),
+(13, 'Low-Top Lace-Up Sneakers', 750, 15, 3, '•  Lace fastening •  Regular Fit •  PU upper', 8, 0),
+(14, 'Disney Frozen Print Ballerinas', 549.99, 13, 3, '•  Slip-on styling •  3-month warranty against manufacturing defects', 5, 3),
+(15, 'Textured Lace-Up Sports Shoes', 692, 10, 3, '•  Lace fastening •  Fabric upper •  Rubber sole', 8, 1);
 
 -- --------------------------------------------------------
 

@@ -54,7 +54,10 @@ require_once('../connection.php');
                         <hr>
                         <div class="row">
                             <div class="col-1"><?php echo $recodes['id']?></div>
-                            <div class="col-2"><?php echo $recodes['email']; ?></div>
+                            <div class="col-2">
+                                <div class="row"><?php echo $recodes['email']; ?></div>
+                                <div class="row"><?php echo $recodes['name']; ?></div>
+                            </div>
                             <div class="col-4">
                                 <div class="row">
                                     <div class="col-3"><b>Photo</b></div>
@@ -119,7 +122,11 @@ require_once('../connection.php');
                                 </div>
                                 <?php }?>
                             </div>
-                            <div class="col-2"><?php echo $recodes['address']; ?></div>
+                            <div class="col-2">
+                                <div class="row"><?php echo $recodes['address']; ?></div>
+                                <div class="row"><?php echo $recodes['phone_no']; ?></div>
+                            </div>
+
                             <div class="col-1"><?php echo $recodes['total_price']; ?></div>
                             <div class="col-2">
                                 <div class="row">

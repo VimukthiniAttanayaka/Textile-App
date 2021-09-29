@@ -18,8 +18,8 @@
         <?php include 'navbar.php'; ?>
         <div class="row" id="form">
         <?php
-        $totalCost =$_GET['totalPrice'];
-        echo $totalCost;
+        $totalCost =$_SESSION['cart_total'];
+
         //variable for store errer messages 
         $error = "";
         if (isset($_REQUEST['submit'])) {
@@ -44,7 +44,12 @@
 
             //sending user inputs database
             else {
-                echo '<script>window.location = "home.php";</script>';
+                $_SESSION['first_name'] = $first_name;
+                $_SESSION['last_name'] = $last_name;
+                $_SESSION['address'] = $address;
+                $_SESSION['city'] = $city;
+                $_SESSION['phone_no'] = $phone_no;
+                echo '<script>window.location = "paypal.php";</script>';
             }
         }
             ?>
@@ -73,61 +78,14 @@
                     <label for ="phone_no">Phone no: </label>
                     <input type ="text" name="phone_no" placeholder="" required>
                 </div><br><br>
-                <div  id="paypal-button" style="text-align:right;">
+
                     <button type="submit" class="btn btn-primary" name="submit">Submit</button>
-                </div>
-                <!--<div  id="paypal-button" style="text-align:right;">
-                    <button type="submit" class="btn btn-primary" name="submit">Submit</button>
-                </div>
-                <script src="https://www.paypalobjects.com/api/checkout.js"></script>-->
-            </form>
+            
+                </form>
             <div class="row">
-                <br><h6>Total Amount =</h6>
+                <br><h6>Total Amount = LKR.<?php echo $totalCost ?></h6>
             </div>
-
         </div></center>
-        <script>
-
-        paypal.Button.render({
-            // Configure environment
-            env: 'sandbox',
-            client: {
-            sandbox: 'demo_sandbox_client_id',
-            production: 'demo_production_client_id'
-            },
-            // Customize button (optional)
-            locale: 'en_US',
-            style: {
-            size: 'small',
-            color: 'gold',
-            shape: 'pill',
-            },
-
-            // Enable Pay Now checkout flow (optional)
-            commit: true,
-
-            // Set up a payment
-            payment: function(data, actions) {
-            return actions.payment.create({
-                transactions: [{
-                amount: {
-                    total: '234.78',
-                    currency: 'USD'
-                }
-                }]
-            });
-            },
-            // Execute the payment
-            onAuthorize: function(data, actions) {
-            return actions.payment.execute().then(function() {
-                // Show a confirmation message to the buyer
-                window.alert('Thank you for your purchase!');
-                window.location.replace("success.php");
-            });
-            }
-        }, '#paypal-button');
-
-        </script>
     </body>
 </html>
 <!--end connection with database-->

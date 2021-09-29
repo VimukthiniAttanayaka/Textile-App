@@ -38,8 +38,17 @@ require_once('connection.php');
                     //generating random value
                     $randomNumber = rand(100000,999999);
                     $_SESSION["code"] = $randomNumber;
-                    
+
+                    $query1 = "SELECT validated FROM client WHERE email = '$email'";
+                    $select1 = mysqli_query($connection, $query1);
+                    $user_validation = mysqli_fetch_assoc($select1);
+
+                    if($user_validation['validated'] == '1'){ 
+                        echo '<script>window.location = "home.php";</script>';
+                    } else{
                     echo '<script>window.location = "email_validation.php";</script>';
+                    }  
+
                 } else {
                     $error = "Check your e-mail and Password again";
                 }

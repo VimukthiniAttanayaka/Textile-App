@@ -11,10 +11,30 @@ require_once('../connection.php');
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="../styles/add-item.css">
     <title>add bags</title>
+    <style>
+        body, html {
+            height: 100%;
+        }
+
+        .bg {
+            /* The image used */
+            background-image: url("https://www.wallpaperflare.com/static/826/633/309/luggage-suitcases-baggage-bags-wallpaper.jpg");
+
+            /* Full height */
+            height: 100%;
+
+            /* Center and scale the image nicely */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
+
 </head>
 
-<body>
-    <?php $id=null;
+<body class="bg">
+    <?php include 'admin_navbar.php';
+        $id=null;
         $name = null;
         $price = null;
         $discription = null;
@@ -87,6 +107,14 @@ require_once('../connection.php');
                         $total_item = $n['total_item'];
                         }
             ?>
+            <div class="row">
+                <div class="col-8"></div>
+                <div class="col-2">
+                    <h1 align="center" style="margin-top: 30px; color: honeydew; text-shadow: 2px 2px 7px #000000;">
+                        Add Bags
+                    </h1>
+                </div>
+            </div>
             <!--admin registation form-->
             <form method="post" action="<?php echo $_SERVER["PHP_SELF"]; ?>">
             <?php if($update == true){?>

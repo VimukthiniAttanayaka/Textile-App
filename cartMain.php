@@ -120,7 +120,7 @@ if ($result->num_rows > 0) {
     </div>
     </div>
     <hr>
-
+<?php $_SESSION['cart_total'] = $totalCost; ?>
 <?php
 
 } else {

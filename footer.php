@@ -76,12 +76,12 @@ require_once('connection.php');
                     <div class="col">
                         <!--quick links for information pages-->
                         <h2>Information</h2><br>
-                        <div><a id='url' href="SignUp-page.php">About Us</a></div><br>
-                        <div><a id='url' href="SignUp-page.php">Privacy & Policy</a></div><br>
-                        <div><a id='url' href="SignUp-page.php">Delivery Information</a></div><br>
-                        <div><a id='url' href="SignUp-page.php">Contact</a></div><br>
-                        <div><a id='url' href="SignUp-page.php">Terms & Conditions</a></div><br>
-                        <div><a id='url' href="SignUp-page.php">Return & Exchangers</a></div><br><br>
+                        <div><a id='url' href="./information/about-us.php">About Us</a></div><br>
+                        <div><a id='url' href="./information/privacy.php">Privacy & Policy</a></div><br>
+                        <div><a id='url' href="./information/deilvery-info.php">Delivery Information</a></div><br>
+                        <div><a id='url' href="./information/contact.php">Contact</a></div><br>
+                        <div><a id='url' href="./information/t&c.php">Terms & Conditions</a></div><br>
+                        <div><a id='url' href="./information/return.php">Return & Exchangers</a></div><br><br>
                     </div>
                 </div>
                 <div class="row">

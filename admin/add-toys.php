@@ -12,9 +12,28 @@ require_once('../connection.php');
     <link rel="stylesheet" href="../styles/add-item.css">
     <title>add toys</title>
 </head>
+<style>
+    body, html {
+        height: 100%;
+    }
 
-<body>
-<?php $id=null;
+    .bg {
+        /* The image used */
+        background-image: url("https://images.pexels.com/photos/1029208/pexels-photo-1029208.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+
+        /* Full height */
+        height: 100%;
+
+        /* Center and scale the image nicely */
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+</style>
+
+<body class="bg">
+<?php include 'admin_navbar.php';
+        $id=null;
         $name = null;
         $price = null;
         $total_item = null;
@@ -81,6 +100,15 @@ require_once('../connection.php');
                         $total_item = $n['total_item'];
                         }
             ?>
+
+            <div class="row">
+            <div class="col-8"></div>
+            <div class="col-2">
+           <h1 align="center" style="margin-top: 30px; color: maroon; text-shadow: 2px 2px 7px #ffffff;">
+               Add Toys
+           </h1>
+            </div>
+            </div>
             <!--admin registation form-->
             <form method="post" action="<?php echo $_SERVER["PHP_SELF"]; ?>">
             <?php if($update == true){?>

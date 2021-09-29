@@ -18,10 +18,17 @@ require_once('connection.php');
     <div class="container-fluid">
         <!--adding data for cart-->
     <?php
+    $email=$_SESSION["email"];
+
+    if (isset($_GET['del'])) {
+        $id = $_GET['del'];
+        $client = "DELETE FROM cart WHERE id=$id";
+            mysqli_query($connection, $client);
+        header('location: cartMain.php');
+    }else{
         //getting value and store in variables
-        $email=$_SESSION["email"];
         $id= $_GET['id'];
-	$id= str_replace(" ","",$id);
+	    $id= str_replace(" ","",$id);
         $catagery = $_GET['catagery'];
         $id= str_replace(" ","",$id);
         $quentity = $_REQUEST['quentity'];
@@ -80,7 +87,7 @@ require_once('connection.php');
             $_SESSION["msg"] = 1;
             header("Location: $url");
         }
-        ?>
+    }?>
     </div>
 </body>
 

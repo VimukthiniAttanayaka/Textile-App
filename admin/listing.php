@@ -104,6 +104,7 @@ require_once('../connection.php');
             <input id="btn" type="submit" name="button5" class="button" value="Bags" />
             <input id="btn" type="submit" name="button6" class="button" value="shoes" />
             <input id="btn" type="submit" name="button7" class="button" value="toys" />
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop1">Add New</button>
         </form>
         <hr>
         </div>
