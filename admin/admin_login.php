@@ -1,6 +1,6 @@
 <?php
 //connect with database
-require_once('connection.php');
+require_once('../connection.php');
 ?>
 <!DOCTYPE html>
 <html>
@@ -9,15 +9,26 @@ require_once('connection.php');
     <meta charset="UTF-8">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="./styles/login.css">
+    <link rel="stylesheet" href="../styles/login.css">
     <title>Registration-form</title>
+    <style>
+        #log{
+            background-image: url("https://www.wallpaperflare.com/static/826/633/309/luggage-suitcases-baggage-bags-wallpaper.jpg");
+        }
+        #con{
+            background-image: url("https://www.adorama.com/alc/wp-content/uploads/2018/10/modeling-poses-portfolio-feature.jpg");
+            background-repeat: no-repeat;
+            background-size: 100%;
+            padding-bottom: 20%;
+        }
+    </style>
 </head>
 
 <body>
-    <div class="container-fluid">
+    <div class="container-fluid"  id="log">
         <!--include navbar for home page-->
-        <?php include 'navbar.php'; ?>
-        <div class="row">
+        <?php include 'admin_navbar.php'; ?>
+        <div class="row" id="con">
             <?Php
             //variable for store errer messages
             $error = "";
@@ -35,7 +46,7 @@ require_once('connection.php');
                     if ($recodes && $password == $recodes['password']) {
                         //checking password matching or not
                         $_SESSION["email"] = $email;
-                        header("Location: ./admin/index.php?");
+                        echo '<script>window.location = "admin_home.php";</script>';
                     } else {
                         $error = "Check your e-mail and Password again";
                     }
@@ -56,7 +67,7 @@ require_once('connection.php');
                     <p><input type="email" name="email" placeholder="" required></p>
                     <p id='label'><label for="password">Password: </label></p>
                     <p><input type="password" name="password" placeholder="" required></p>
-                    <p>Don't have a account? <a href="admin_register.php">Sign-Up</a></p>
+                    <p>Don't have a account? <a href="index.php">Sign-Up</a></p>
                     <div class="row">
                         <div class="col"><button class="btn btn-secondary" type="reset">Clear</button></div>
                         <div class="col"><button class="btn btn-primary" type="submit" name="submit">Log In</button></div>

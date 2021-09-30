@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Sep 29, 2021 at 01:03 PM
+-- Generation Time: Sep 30, 2021 at 04:59 AM
 -- Server version: 8.0.21
 -- PHP Version: 7.3.21
 
@@ -212,6 +212,21 @@ CREATE TABLE IF NOT EXISTS `feedback_form` (
 INSERT INTO `feedback_form` (`name`, `phone_no`, `email`, `feedback`) VALUES
 ('Jane', 2147483647, 'vimukthinia@gmail.com', 'wefhbrewf wefvrwefdnew qedqowfd evr2374f 2grwef'),
 ('sumudu perera', 745637098, 'sumudu@gmail.com', 'wery good work');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `message`
+--
+
+DROP TABLE IF EXISTS `message`;
+CREATE TABLE IF NOT EXISTS `message` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `name` varchar(100) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `msg` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 

@@ -36,15 +36,16 @@ If you have any other questions or concerns, our team of helpers are here to gui
 
  
 
-Contact – Email Us: etextile@gmail.com  or  Call Us : +94 76 1234567
+Contact – Email Us: <a href="mailto:etextile@gmail.com">etextile@gmail.com</a>  or  Call Us : <a href="tel:+94 76 1234567">+94 76 1234567</a>
+
 
  </p>
 		
 				</div>
 				<div class="social">
-					<a href=""><i class="fab fa-facebook-f"></i></a>
-					<a href=""><i class="fab fa-twitter"></i></a>
-					<a href=""><i class="fab fa-instagram"></i></a>
+					<a href="#facebook"><i class="fab fa-facebook-f"></i></a>
+					<a href="#twitter"><i class="fab fa-twitter"></i></a>
+					<a href="#instagram"><i class="fab fa-instagram"></i></a>
 				</div>
 			</div>
 			<div class="image-section">
