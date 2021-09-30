@@ -154,10 +154,10 @@ if($user_validation['validated'] == '1'){ ?>
         <div class="alert alert-danger" role="alert">
             Please Validate Your Email
         </div>
-            <button disabled class="btn btn-success">
+            <button disabled class="btn btn-success" style="background-color: greenyellow; color: darkblue; box-shadow: black 5px 5px ">
                 <h2>Proceed To Checkout</h2>
             </button>
-            <a href="email_validation.php">Validate</a>
+            <center><button style="width:100px;margin:10px;color:black;" class="btn btn-warning"><a style="color:black;"href="email_validation.php">Validate</a></button></center>
     </div>
     <div class="row">
         <br>

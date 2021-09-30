@@ -3,7 +3,6 @@
 require_once('../connection.php');
 ?>
 <!DOCTYPE html>
-<!-- Designined by CodingLab | www.youtube.com/codinglabyt -->
 <html lang="en" dir="ltr">
 
 <head>
@@ -19,10 +18,12 @@ require_once('../connection.php');
 
 <body>
 <div class="row">
+<div class="col">
+<div class="row">
     <!--include navbar-->
 	<?php include 'navbar.php'; ?>
 </div>
-  <div class="row">
+  <div class="row" id="ful">
   <?php if (isset($_REQUEST['submit'])) {
     $name = $_REQUEST['name'];
     $email = $_REQUEST['email'];
@@ -79,6 +80,8 @@ require_once('../connection.php');
       </div>
     </div>
   </div>
+</div>
+</div>
 </div>
 </body>
 
