@@ -18,6 +18,11 @@ require_once('../connection.php');
 </head>
 
 <body>
+<div class="row">
+    <!--include navbar-->
+	<?php include 'navbar.php'; ?>
+</div>
+  <div class="row">
   <?php if (isset($_REQUEST['submit'])) {
     $name = $_REQUEST['name'];
     $email = $_REQUEST['email'];
@@ -74,7 +79,7 @@ require_once('../connection.php');
       </div>
     </div>
   </div>
-
+</div>
 </body>
 
 </html>

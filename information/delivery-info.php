@@ -8,6 +8,8 @@
 	<link rel="stylesheet" type="text/css" href="returns.css">
 </head>
 <body>
+	<!--include navbar-->
+	<?php include 'navbar.php'; ?>
 	<div class="section">
 		<div class="container">
 			<div class="content-section">
